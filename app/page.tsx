@@ -4,60 +4,65 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
-      {/* Navigation Bar */}
-      <nav className="w-full px-6 py-4 flex justify-between items-center bg-[var(--background)] sticky top-0 z-50 border-b border-[var(--foreground)]/5 backdrop-blur-sm">
-        <div className="flex items-center">
-          {/* Logo Container - Enlarged */}
-          <div className="relative h-32 w-72 md:h-48 md:w-[500px] transition-all duration-300">
-            <Image
-              src="/logo.jpeg"
-              alt="לוגו סטודיו לעיצוב"
-              fill
-              className="object-contain object-right"
-              priority
-            />
-          </div>
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-10 text-[var(--foreground)] font-medium text-base tracking-wide">
-          <Link href="#" className="hover:text-[var(--accent)] transition-colors">בית</Link>
-          <Link href="#" className="hover:text-[var(--accent)] transition-colors">תיק עבודות</Link>
-          <Link href="#" className="hover:text-[var(--accent)] transition-colors">שירותים</Link>
-          <Link href="#" className="hover:text-[var(--accent)] transition-colors">אודות</Link>
-          <Link href="#" className="hover:text-[var(--accent)] transition-colors">צור קשר</Link>
-        </div>
-
-        <button className="hidden md:block px-8 py-3 bg-[var(--foreground)] text-[var(--background)] text-sm font-medium rounded-full hover:bg-[var(--accent)] transition-colors duration-300">
-          דברו איתנו
-        </button>
-      </nav>
 
       {/* Hero Section */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-24 md:py-32 bg-[var(--background)]">
-        <div className="max-w-5xl animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[var(--foreground)] mb-8 leading-tight">
-            עיצוב על-זמני <br />
-            <span className="text-[var(--accent)] font-serif italic">שמשדרג את החלל שלך</span>
+      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 md:py-32 bg-[var(--background)]">
+        <div className="max-w-full animate-fade-in-up space-y-8">
+
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--foreground)] leading-tight whitespace-nowrap">
+            מעצבים לך <span className="text-[var(--accent)]">את הדמיון</span>
           </h1>
-          <p className="text-xl md:text-2xl text-[var(--foreground)]/70 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            אנו יוצרים חללי פנים יוקרתיים ומותאמים אישית המשקפים את הסגנון והחזון הייחודיים שלך.
-            הפכו את הבית שלכם ליצירת מופת.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="px-10 py-5 bg-[var(--foreground)] text-[var(--background)] text-lg font-medium rounded-full hover:bg-[var(--accent)] transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
-              לצפייה בתיק העבודות
-            </button>
-            <button className="px-10 py-5 border-[1.5px] border-[var(--foreground)] text-[var(--foreground)] text-lg font-medium rounded-full hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-all duration-300">
-              לתיאום פגישת ייעוץ
-            </button>
+
+          <div className="flex flex-col gap-2 text-xl md:text-2xl text-[var(--foreground)] font-bold max-w-3xl mx-auto leading-relaxed border-r-4 border-[var(--accent)] pr-6 text-right w-fit">
+            <p>• בוגר לימודי חוץ בטכניון</p>
+            <p>• בעל חברה ותיקה ומוניטין רב</p>
+            <p>• בוגר תעשיית האירועים וההפקה</p>
+          </div>
+
+          <div className="pt-8 flex flex-col sm:flex-row gap-6 justify-center">
+            <Link href="/process" className="px-10 py-5 bg-[var(--accent)] text-[var(--background)] text-lg font-bold rounded-full hover:bg-[var(--foreground)] transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
+              איך זה עובד?
+            </Link>
+            <Link href="/contact" className="px-10 py-5 border-[2px] border-[var(--accent)] text-[var(--accent)] text-lg font-bold rounded-full hover:bg-[var(--accent)] hover:text-[var(--background)] transition-all duration-300">
+              קבע פגישת ייעוץ
+            </Link>
           </div>
         </div>
       </main>
 
-      {/* Simple Footer */}
-      <footer className="py-12 border-t border-[var(--foreground)]/5 text-center text-[var(--foreground)]/40 text-sm">
-        <p>© 2026 פורטפוליו עיצוב פנים. כל הזכויות שמורות.</p>
+      {/* Intro Section */}
+      <section className="bg-[var(--background)] py-20 px-4 border-t border-[var(--foreground)]/5">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl font-black text-[var(--foreground)]">נעים להכיר, אני אבי</h2>
+          <p className="text-xl leading-relaxed font-medium text-[var(--foreground)]/80">
+            "אחרי שנים רבות כבעלים של חברת הפקות ואירועים, והפקת אין סוף אירועים, הגיע הזמן לעיסוק שמוסיף לנפש וליצירה."
+          </p>
+          <p className="text-lg leading-relaxed text-[var(--foreground)]/80">
+            פניתי לתחום עיצוב הפנים כלימודי חוץ של הטכניון בעזריאלי, הקמתי סטודיו ויצאנו לדרך. הסטודיו מתמחה בעיצוב חללים מסחריים, מאפיות, חנויות נוחות ובתים פרטיים.
+          </p>
+          <Link href="/about" className="inline-block px-8 py-3 mt-4 text-[var(--accent)] font-black text-lg hover:underline underline-offset-4">
+            קרא עוד עלי &larr;
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 border-t border-[var(--foreground)]/10 text-center bg-[var(--accent)] text-[var(--background)]">
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 items-center mb-8">
+          <div className="text-right">
+            <h3 className="font-black text-xl text-[var(--background)] mb-2">אבי צוובנר</h3>
+            <p className="text-sm opacity-90">עיצוב פנים שמתחיל מדמיון.</p>
+          </div>
+          <div className="flex flex-col gap-2 font-bold text-[var(--background)]">
+            <a href="tel:+972504673332" className="hover:text-[var(--foreground)]">050-467-3332</a>
+            <a href="mailto:avizvebv@gmail.com" className="hover:text-[var(--foreground)]">avizvebv@gmail.com</a>
+          </div>
+          <div className="text-left text-sm font-bold flex flex-col gap-2 text-[var(--background)]">
+            <Link href="/privacy-policy" className="hover:text-[var(--foreground)]">מדיניות פרטיות</Link>
+            <Link href="/accessibility" className="hover:text-[var(--foreground)]">הצהרת נגישות</Link>
+          </div>
+        </div>
+        <p className="text-[var(--background)]/60 text-sm">© 2026 אבי צוובנר - עיצוב פנים. כל הזכויות שמורות.</p>
       </footer>
     </div>
   );

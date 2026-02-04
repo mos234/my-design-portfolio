@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: 'סטודיו לעיצוב פנים המתמחה בחללים מסחריים, מאפיות, ובתים פרטיים.',
 };
 
+import Image from 'next/image';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,7 +19,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl">
-      <body className="antialiased min-h-screen flex flex-col">
+      <body className="antialiased min-h-screen flex flex-col relative">
+        {/* Background Image */}
+        <div className="fixed inset-0 z-[-1]">
+          <Image
+            src="/bg.jpg"
+            alt="Reference Background"
+            fill
+            className="object-cover opacity-100" // Adjust opacity if needed later
+            priority
+          />
+        </div>
+
         <Navbar />
         {children}
         <SocialButtons />

@@ -6,7 +6,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col font-sans">
 
       {/* Hero Section */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 md:py-32 bg-[var(--background)]">
+      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">
         <div className="max-w-full animate-fade-in-up space-y-8">
 
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--foreground)] leading-tight whitespace-nowrap">
@@ -31,7 +31,7 @@ export default function Home() {
       </main>
 
       {/* Intro Section */}
-      <section className="bg-[var(--background)] py-20 px-4 border-t border-[var(--foreground)]/5">
+      <section className="py-20 px-4 border-t border-[var(--foreground)]/5 backdrop-blur-sm bg-[var(--background)]/80">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-black text-[var(--foreground)]">נעים להכיר, אני אבי</h2>
           <p className="text-xl leading-relaxed font-medium text-[var(--foreground)]/80">

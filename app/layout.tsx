@@ -23,7 +23,7 @@ export default function RootLayout({
         {/* Background Image */}
         <div className="fixed inset-0 z-[-1]">
           <Image
-            src="/bg.jpg"
+            src="/bg.jpeg"
             alt="Reference Background"
             fill
             className="object-cover opacity-100" // Adjust opacity if needed later

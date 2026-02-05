@@ -13,10 +13,10 @@ export default function Home() {
             מעצבים לך <span className="text-[var(--accent)]">את הדמיון</span>
           </h1>
 
-          <div className="flex flex-col gap-2 text-xl md:text-2xl text-[var(--foreground)] font-bold max-w-3xl mx-auto leading-relaxed border-r-4 border-[var(--accent)] pr-6 text-right w-fit">
-            <p>• בוגר לימודי חוץ בטכניון</p>
-            <p>• בעל חברה ותיקה ומוניטין רב</p>
-            <p>• בוגר תעשיית האירועים וההפקה</p>
+          <div className="flex flex-col gap-2 text-lg md:text-xl text-white font-bold max-w-3xl mx-auto leading-relaxed border-r-4 border-[var(--accent)] bg-black/40 backdrop-blur-sm p-6 rounded-xl shadow-2xl text-right w-fit">
+            <p className="drop-shadow-md">• בוגר לימודי חוץ בטכניון</p>
+            <p className="drop-shadow-md">• בעל חברה ותיקה ומוניטין רב</p>
+            <p className="drop-shadow-md">• בוגר תעשיית האירועים וההפקה</p>
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row gap-6 justify-center">

@@ -12,7 +12,7 @@ export default function AboutPage() {
                 {/* Main Story */}
                 <div className="prose prose-xl max-w-none text-[var(--foreground)]/90 font-medium leading-relaxed bg-[#F5F3EE] p-8 md:p-12 rounded-2xl border border-[var(--foreground)]/5 shadow-sm">
                     <p>
-                        אחרי שנים רבות כבעלים של חברת הפקות ואירועים, והפקת אין סוף אירועים, הגיע הזמן לעיסוק שמוסיף לנפש וליצירה.
+                        אחרי שנים רבות כבעלים של חברת הפקות ואירועים, וביצוע אין סוף אירועים, הגיע הזמן לעיסוק שמוסיף לנפש וליצירה.
                         פניתי לתחום עיצוב הפנים כלימודי חוץ של הטכניון בעזריאלי, הקמתי סטודיו ויצאנו לדרך.
                     </p>
                     <p className="mt-6">

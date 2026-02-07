@@ -1,0 +1,1 @@
+/plugin marketplace add aviz85/claude-skills-library

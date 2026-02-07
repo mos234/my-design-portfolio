@@ -35,7 +35,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-black text-[var(--foreground)]">נעים להכיר, אני אבי</h2>
           <p className="text-xl leading-relaxed font-medium text-[var(--foreground)]/80">
-            "אחרי שנים רבות כבעלים של חברת הפקות ואירועים, והפקת אין סוף אירועים, הגיע הזמן לעיסוק שמוסיף לנפש וליצירה."
+            "אחרי שנים רבות כבעלים של חברת הפקות ואירועים, וביצוע אין סוף אירועים, הגיע הזמן לעיסוק שמוסיף לנפש וליצירה."
           </p>
           <p className="text-lg leading-relaxed text-[var(--foreground)]/80">
             פניתי לתחום עיצוב הפנים כלימודי חוץ של הטכניון בעזריאלי, הקמתי סטודיו ויצאנו לדרך. הסטודיו מתמחה בעיצוב חללים מסחריים, מאפיות, חנויות נוחות ובתים פרטיים.

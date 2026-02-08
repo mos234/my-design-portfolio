@@ -22,12 +22,18 @@ export default function PortfolioPage() {
                         href="/portfolio/residence"
                     />
 
+                    {/* Bakery Project */}
+                    <ProjectCard
+                        title="בייקרי – מאפייה"
+                        subtitle="גלריית לפני / אחרי"
+                        imageSrc="/gallery/bakery/cover.jpeg"
+                        href="/portfolio/bakery"
+                    />
+
                     {/* Placeholder for future projects */}
-                    {[1, 2].map((i) => (
-                        <div key={i} className="relative aspect-[4/3] bg-white/10 rounded-3xl border-2 border-[var(--foreground)]/10 flex items-center justify-center opacity-50 grayscale">
-                            <span className="text-xl font-bold">פרויקט בקרוב...</span>
-                        </div>
-                    ))}
+                    <div className="relative aspect-[4/3] bg-white/10 rounded-3xl border-2 border-[var(--foreground)]/10 flex items-center justify-center opacity-50 grayscale">
+                        <span className="text-xl font-bold">פרויקט בקרוב...</span>
+                    </div>
                 </div>
             </div>
         </div>

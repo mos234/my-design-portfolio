@@ -54,13 +54,20 @@ export default function Home() {
           <p className="text-xl text-[var(--accent)] font-bold">הצצה לעבודות האחרונות שלנו</p>
         </div>
 
-        <div className="flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <ProjectCard
             title="דירת מגורים יוקרתית"
             subtitle="סיור בגלריה המלאה"
             imageSrc="/gallery/residence/cover.jpeg"
             href="/portfolio/residence"
           />
+          <ProjectCard
+            title="בייקרי – מאפייה"
+            subtitle="גלריית לפני / אחרי"
+            imageSrc="/gallery/bakery/cover.jpeg"
+            href="/portfolio/bakery"
+          />
+
         </div>
       </section>
 

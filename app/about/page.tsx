@@ -16,13 +16,13 @@ export default function AboutPage() {
 
                     {/* Profile Image */}
                     <div className="shrink-0">
-                        <div className="relative w-48 h-48 md:w-56 md:h-56 overflow-hidden rounded-full border-4 border-[var(--accent)]/20 shadow-lg group cursor-pointer">
+                        <div className="relative w-64 h-64 md:w-72 md:h-72 overflow-hidden rounded-full border-4 border-[var(--accent)]/20 shadow-lg group cursor-pointer">
                             <Image
                                 src="/profile.jpeg"
                                 alt="תמונת פרופיל"
                                 fill
-                                className="object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-500 ease-out"
-                                sizes="(max-width: 768px) 192px, 224px"
+                                className="object-cover object-top grayscale hover:grayscale-0 hover:scale-105 transition-all duration-500 ease-out"
+                                sizes="(max-width: 768px) 256px, 288px"
                                 priority
                             />
                         </div>

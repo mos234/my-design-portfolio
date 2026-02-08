@@ -10,8 +10,8 @@ export default function Home() {
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">
         <div className="max-w-full animate-fade-in-up space-y-8">
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--foreground)] leading-tight whitespace-nowrap">
-            מעצבים לך <span className="text-[var(--accent)] drop-shadow-lg">את הדמיון</span>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--accent)] leading-tight whitespace-nowrap drop-shadow-lg">
+            מעצבים לך את הדמיון
           </h1>
 
           <div className="flex flex-col gap-2 text-lg md:text-xl text-white font-bold max-w-3xl mx-auto leading-relaxed border-r-4 border-[var(--accent)] bg-black/40 backdrop-blur-sm p-6 rounded-xl shadow-2xl text-right w-fit">

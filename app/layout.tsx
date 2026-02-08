@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar';
 
 export const metadata: Metadata = {
   title: 'אבי צוובנר - עיצוב פנים',
-  description: 'סטודיו לעיצוב פנים המתמחה בחללים מסחריים, מאפיות, ובתים פרטיים.',
+  description: 'סטודיו לעיצוב פנים המתמחה בחללים מסחריים, מאפיות, ודירות מגורים.',
 };
 
 import Image from 'next/image';

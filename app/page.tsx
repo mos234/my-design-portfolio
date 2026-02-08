@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProjectCard from "@/components/ProjectCard"; // Import new card
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
         <div className="max-w-full animate-fade-in-up space-y-8">
 
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--foreground)] leading-tight whitespace-nowrap">
-            מעצבים לך <span className="text-[var(--accent)]">את הדמיון</span>
+            מעצבים לך <span className="text-[var(--accent)] drop-shadow-lg">את הדמיון</span>
           </h1>
 
           <div className="flex flex-col gap-2 text-lg md:text-xl text-white font-bold max-w-3xl mx-auto leading-relaxed border-r-4 border-[var(--accent)] bg-black/40 backdrop-blur-sm p-6 rounded-xl shadow-2xl text-right w-fit">
@@ -43,6 +44,23 @@ export default function Home() {
           <Link href="/about" className="inline-block px-8 py-3 mt-4 text-[var(--accent)] font-black text-lg hover:underline underline-offset-4">
             קרא עוד עלי &larr;
           </Link>
+        </div>
+      </section>
+
+      {/* Featured Projects Preview */}
+      <section className="py-20 px-4 bg-white/50 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-black text-[var(--foreground)] mb-4">פרויקטים נבחרים</h2>
+          <p className="text-xl text-[var(--accent)] font-bold">הצצה לעבודות האחרונות שלנו</p>
+        </div>
+
+        <div className="flex justify-center">
+          <ProjectCard
+            title="דירת מגורים יוקרתית"
+            subtitle="סיור בגלריה המלאה"
+            imageSrc="/gallery/residence/cover.jpeg"
+            href="/portfolio/residence"
+          />
         </div>
       </section>
 

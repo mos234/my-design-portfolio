@@ -1,37 +1,25 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
-import fs from "fs";
-import path from "path";
+import { useState, useEffect } from "react";
 
 export default function Bakery() {
-    const galleryDir = path.join(process.cwd(), "public/gallery/bakery");
-    let beforeImages: string[] = [];
-    let afterImages: string[] = [];
+    const [beforeImages, setBeforeImages] = useState<string[]>([]);
+    const [afterImages, setAfterImages] = useState<string[]>([]);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-    if (fs.existsSync(galleryDir)) {
-        const files = fs.readdirSync(galleryDir).filter(f =>
-            f !== 'cover.jpeg' && (f.endsWith('.jpeg') || f.endsWith('.jpg') || f.endsWith('.png'))
-        );
-
-        // Separate before and after images
-        files.forEach(file => {
-            if (file.includes('-before')) {
-                beforeImages.push(file);
-            } else if (file.includes('-after')) {
-                afterImages.push(file);
-            }
-        });
-
-        // Sort numerically
-        const numericSort = (a: string, b: string) => {
-            const numA = parseInt(a.match(/\d+/)?.[0] || "0");
-            const numB = parseInt(b.match(/\d+/)?.[0] || "0");
-            return numA - numB;
-        };
-
-        beforeImages.sort(numericSort);
-        afterImages.sort(numericSort);
-    }
+    useEffect(() => {
+        // Hardcoded based on actual files in the gallery
+        const before = ['0-before.jpeg', '2-before.jpeg', '3-before.jpeg', '4-before.jpeg'];
+        const after = [
+            '0-after.jpeg', '1-after.jpeg', '2-after.jpeg', '3-after.jpeg', '4-after.jpeg',
+            '5-after.jpeg', '6-after.jpeg', '7-after.jpeg', '8-after.jpeg', '9-after.jpeg',
+            '10-after.jpeg', '11-after.jpeg', '12-after.jpeg', '13-after.jpeg'
+        ];
+        setBeforeImages(before);
+        setAfterImages(after);
+    }, []);
 
     return (
         <div className="min-h-screen bg-[var(--background)] py-12 px-6 font-sans">
@@ -57,7 +45,11 @@ export default function Bakery() {
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {beforeImages.map((file, idx) => (
-                                <div key={idx} className="relative h-72 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group border-4 border-black/20">
+                                <div
+                                    key={idx}
+                                    className="relative h-72 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group border-4 border-black/20 cursor-pointer hover:-translate-y-1"
+                                    onClick={() => setSelectedImage(`/gallery/bakery/${file}`)}
+                                >
                                     <Image
                                         src={`/gallery/bakery/${file}`}
                                         alt={`לפני השיפוץ ${idx + 1}`}
@@ -65,9 +57,6 @@ export default function Bakery() {
                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                         quality={75}
                                     />
-                                    <div className="absolute top-3 right-3 bg-black/70 text-white text-sm px-4 py-2 rounded-full font-bold shadow-lg">
-                                        לפני
-                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -91,7 +80,11 @@ export default function Bakery() {
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {afterImages.map((file, idx) => (
-                                <div key={idx} className="relative h-72 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group border-4 border-[var(--accent)]/30">
+                                <div
+                                    key={idx}
+                                    className="relative h-72 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group border-4 border-[var(--accent)]/30 cursor-pointer hover:-translate-y-1"
+                                    onClick={() => setSelectedImage(`/gallery/bakery/${file}`)}
+                                >
                                     <Image
                                         src={`/gallery/bakery/${file}`}
                                         alt={`אחרי השיפוץ ${idx + 1}`}
@@ -99,9 +92,6 @@ export default function Bakery() {
                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                         quality={75}
                                     />
-                                    <div className="absolute top-3 right-3 bg-[var(--accent)] text-[var(--background)] text-sm px-4 py-2 rounded-full font-bold shadow-lg">
-                                        אחרי
-                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -115,6 +105,26 @@ export default function Bakery() {
                     </div>
                 )}
             </div>
+
+            {/* Lightbox */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 backdrop-blur-md"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <button className="absolute top-6 left-6 text-white text-4xl font-black z-50 hover:text-[var(--accent)]">✕</button>
+                    <div className="relative w-full max-w-6xl aspect-[4/3]">
+                        <Image
+                            src={selectedImage}
+                            alt="תצוגה מוגדלת"
+                            fill
+                            className="object-contain"
+                            priority
+                            quality={90}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

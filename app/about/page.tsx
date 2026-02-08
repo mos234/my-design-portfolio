@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AboutPage() {
     return (
         <div className="min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)] flex flex-col justify-center py-20 px-4">
@@ -9,15 +11,33 @@ export default function AboutPage() {
                     <p className="text-2xl font-bold text-[var(--accent)]">הסיפור שמאחורי העיצוב</p>
                 </div>
 
-                {/* Main Story */}
-                <div className="prose prose-xl max-w-none text-[var(--foreground)]/90 font-medium leading-relaxed bg-[#F5F3EE] p-8 md:p-12 rounded-2xl border border-[var(--foreground)]/5 shadow-sm">
-                    <p>
-                        אחרי שנים רבות כבעלים של חברת הפקות ואירועים, וביצוע אין סוף אירועים, הגיע הזמן לעיסוק שמוסיף לנפש וליצירה.
-                        פניתי לתחום עיצוב הפנים כלימודי חוץ של הטכניון בעזריאלי, הקמתי סטודיו ויצאנו לדרך.
-                    </p>
-                    <p className="mt-6">
-                        אני מאמין שעיצוב טוב צריך לשלב בין אסתטיקה בלתי מתפשרת לבין פרקטיקה יום-יומית. כל פרויקט הוא מסע משותף שאנחנו עוברים יחד, מהסקיצה הראשונה ועד להנחת הפריט האחרון בחלל.
-                    </p>
+                {/* Profile & Main Story */}
+                <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-12 items-center md:items-start bg-[#F5F3EE] p-8 md:p-12 rounded-2xl border border-[var(--foreground)]/5 shadow-sm">
+
+                    {/* Profile Image */}
+                    <div className="shrink-0">
+                        <div className="relative w-48 h-48 md:w-56 md:h-56 overflow-hidden rounded-full border-4 border-[var(--accent)]/20 shadow-lg group cursor-pointer">
+                            <Image
+                                src="/profile.jpeg"
+                                alt="תמונת פרופיל"
+                                fill
+                                className="object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-500 ease-out"
+                                sizes="(max-width: 768px) 192px, 224px"
+                                priority
+                            />
+                        </div>
+                    </div>
+
+                    {/* Bio Text */}
+                    <div className="prose prose-xl max-w-none text-[var(--foreground)]/90 font-medium leading-relaxed">
+                        <p>
+                            אחרי שנים רבות כבעלים של חברת הפקות ואירועים, וביצוע אין סוף אירועים, הגיע הזמן לעיסוק שמוסיף לנפש וליצירה.
+                            פניתי לתחום עיצוב הפנים כלימודי חוץ של הטכניון בעזריאלי, הקמתי סטודיו ויצאנו לדרך.
+                        </p>
+                        <p className="mt-6">
+                            אני מאמין שעיצוב טוב צריך לשלב בין אסתטיקה בלתי מתפשרת לבין פרקטיקה יום-יומית. כל פרויקט הוא מסע משותף שאנחנו עוברים יחד, מהסקיצה הראשונה ועד להנחת הפריט האחרון בחלל.
+                        </p>
+                    </div>
                 </div>
 
                 {/* Credentials Grid */}

@@ -45,7 +45,7 @@ export default function AboutPage() {
                     <div className="bg-white p-10 rounded-2xl border-2 border-[var(--foreground)]/5 hover:border-[var(--accent)] transition-colors">
                         <h3 className="text-3xl font-black mb-6 text-[var(--accent)]">תחומי התמחות</h3>
                         <ul className="grid grid-cols-1 gap-4">
-                            {['חללים מסחריים', 'מאפיות וקונדיטוריות', 'חנויות נוחות', 'בתים פרטיים'].map((item) => (
+                            {['חללים מסחריים', 'מאפיות וקונדיטוריות', 'חנויות נוחות', 'בתי מגורים'].map((item) => (
                                 <li key={item} className="flex items-center gap-3">
                                     <span className="text-[var(--accent)] font-black text-2xl">✓</span>
                                     <span className="text-xl font-bold">{item}</span>

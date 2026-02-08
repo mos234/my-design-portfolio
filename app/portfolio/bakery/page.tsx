@@ -3,84 +3,34 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 
-// Helper to get image pairs
-const getGalleryImages = () => {
-    const galleryDir = path.join(process.cwd(), "public/gallery/bakery");
-
-    if (!fs.existsSync(galleryDir)) {
-        console.warn("Gallery directory not found:", galleryDir);
-        return [];
-    }
-
-    const files = fs.readdirSync(galleryDir);
-
-    // Find all "before" images
-    const beforeImages = files.filter((file) => file.endsWith("-before.jpeg"));
-
-    // Match them with "after" images
-    const pairs = beforeImages.map((beforeFile) => {
-        const id = beforeFile.replace("-before.jpeg", "");
-        const afterFile = `${id}-after.jpeg`;
-
-        if (files.includes(afterFile)) {
-            return {
-                id,
-                before: `/gallery/bakery/${beforeFile}`,
-                after: `/gallery/bakery/${afterFile}`,
-            };
-        }
-        return null;
-    }).filter(Boolean); // Remove unmatched pairs
-
-    return pairs;
-};
-
 export default function Bakery() {
-    // Logic to separate pairs and singles
     const galleryDir = path.join(process.cwd(), "public/gallery/bakery");
-    let pairs: { id: string; before: string; after: string }[] = [];
-    let singles: string[] = [];
+    let beforeImages: string[] = [];
+    let afterImages: string[] = [];
 
     if (fs.existsSync(galleryDir)) {
-        const files = fs.readdirSync(galleryDir).filter(f => f !== 'cover.jpeg' && (f.endsWith('.jpeg') || f.endsWith('.jpg') || f.endsWith('.png')));
+        const files = fs.readdirSync(galleryDir).filter(f =>
+            f !== 'cover.jpeg' && (f.endsWith('.jpeg') || f.endsWith('.jpg') || f.endsWith('.png'))
+        );
 
-        // Map to find pairs
-        const fileMap = new Map<string, { before?: string, after?: string }>();
-
+        // Separate before and after images
         files.forEach(file => {
-            const match = file.match(/^(\d+)-(before|after)\.jpeg$/);
-            if (match) {
-                const id = match[1];
-                const type = match[2] as 'before' | 'after';
-                if (!fileMap.has(id)) fileMap.set(id, {});
-                fileMap.get(id)![type] = file;
-            } else {
-                // Files that don't match the X-type.jpeg pattern are treated as singles
-                singles.push(file);
+            if (file.includes('-before')) {
+                beforeImages.push(file);
+            } else if (file.includes('-after')) {
+                afterImages.push(file);
             }
         });
 
-        // specific logic for singles from incomplete pairs
-        fileMap.forEach((val, key) => {
-            if (val.before && val.after) {
-                pairs.push({
-                    id: key,
-                    before: `/gallery/bakery/${val.before}`,
-                    after: `/gallery/bakery/${val.after}`
-                });
-            } else {
-                if (val.before) singles.push(val.before);
-                if (val.after) singles.push(val.after);
-            }
-        });
-
-        // Numeric Sort
-        pairs.sort((a, b) => parseInt(a.id) - parseInt(b.id));
-        singles.sort((a, b) => {
+        // Sort numerically
+        const numericSort = (a: string, b: string) => {
             const numA = parseInt(a.match(/\d+/)?.[0] || "0");
             const numB = parseInt(b.match(/\d+/)?.[0] || "0");
             return numA - numB;
-        });
+        };
+
+        beforeImages.sort(numericSort);
+        afterImages.sort(numericSort);
     }
 
     return (
@@ -92,83 +42,74 @@ export default function Bakery() {
                         שיפוץ מאפייה – לפני ואחרי
                     </h1>
                     <Link
-                        href="/"
-                        className="mt-4 md:mt-0 px-6 py-2 bg-[var(--accent)] text-white font-bold rounded-full hover:opacity-90 transition-all shadow-md hover:shadow-lg"
+                        href="/portfolio"
+                        className="mt-4 md:mt-0 px-6 py-2 bg-[var(--accent)] text-[var(--background)] font-bold rounded-full hover:opacity-90 transition-all shadow-md hover:shadow-lg"
                     >
                         חזרה לתיק עבודות &larr;
                     </Link>
                 </div>
 
-                {/* Before / After Pairs */}
-                {pairs.length > 0 && (
-                    <div className="space-y-12">
-                        <h2 className="text-3xl font-bold text-[var(--accent)] text-center border-b border-[var(--foreground)]/10 pb-4">
-                            תהליך השיפוץ
-                        </h2>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                            {pairs.map((pair) => (
-                                <div key={pair.id} className="group relative bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-[var(--foreground)]/5 p-4">
-                                    <div className="grid grid-cols-2 gap-4 h-64 md:h-80">
-                                        {/* Before Image */}
-                                        <div className="relative w-full h-full rounded-lg overflow-hidden">
-                                            <Image
-                                                src={pair.before}
-                                                alt={`Before renovation ${pair.id}`}
-                                                fill
-                                                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                                quality={75}
-                                            />
-                                            <div className="absolute top-2 left-2 bg-black/70 text-white text-sm px-3 py-1 rounded-full backdrop-blur-md font-bold shadow-lg">
-                                                לפני
-                                            </div>
-                                        </div>
-
-                                        {/* After Image */}
-                                        <div className="relative w-full h-full rounded-lg overflow-hidden">
-                                            <Image
-                                                src={pair.after}
-                                                alt={`After renovation ${pair.id}`}
-                                                fill
-                                                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                                quality={75}
-                                            />
-                                            <div className="absolute top-2 right-2 bg-[var(--accent)] text-white text-sm px-3 py-1 rounded-full backdrop-blur-md font-bold shadow-lg">
-                                                אחרי
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="mt-4 text-center">
-                                        <span className="text-lg font-bold text-[var(--foreground)]/70">שלב {pair.id}</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
-
-                {/* Additional Images Grid */}
-                {singles.length > 0 && (
+                {/* BEFORE Section */}
+                {beforeImages.length > 0 && (
                     <div className="space-y-8">
-                        <h2 className="text-3xl font-bold text-[var(--accent)] text-center border-b border-[var(--foreground)]/10 pb-4">
-                            גלריית סיום
+                        <h2 className="text-4xl font-black text-[var(--foreground)] text-center">
+                            <span className="bg-black/70 text-white px-6 py-3 rounded-full">לפני השיפוץ</span>
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {singles.map((file, idx) => (
-                                <div key={idx} className="relative h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
+                            {beforeImages.map((file, idx) => (
+                                <div key={idx} className="relative h-72 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group border-4 border-black/20">
                                     <Image
                                         src={`/gallery/bakery/${file}`}
-                                        alt="Bakery view"
+                                        alt={`לפני השיפוץ ${idx + 1}`}
                                         fill
-                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                                         quality={75}
                                     />
+                                    <div className="absolute top-3 right-3 bg-black/70 text-white text-sm px-4 py-2 rounded-full font-bold shadow-lg">
+                                        לפני
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     </div>
                 )}
 
-                {pairs.length === 0 && singles.length === 0 && (
+                {/* Divider */}
+                {beforeImages.length > 0 && afterImages.length > 0 && (
+                    <div className="flex items-center justify-center py-8">
+                        <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent rounded-full"></div>
+                        <span className="px-6 text-4xl">⬇️</span>
+                        <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent rounded-full"></div>
+                    </div>
+                )}
+
+                {/* AFTER Section */}
+                {afterImages.length > 0 && (
+                    <div className="space-y-8">
+                        <h2 className="text-4xl font-black text-[var(--foreground)] text-center">
+                            <span className="bg-[var(--accent)] text-[var(--background)] px-6 py-3 rounded-full">אחרי השיפוץ</span>
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {afterImages.map((file, idx) => (
+                                <div key={idx} className="relative h-72 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group border-4 border-[var(--accent)]/30">
+                                    <Image
+                                        src={`/gallery/bakery/${file}`}
+                                        alt={`אחרי השיפוץ ${idx + 1}`}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        quality={75}
+                                    />
+                                    <div className="absolute top-3 right-3 bg-[var(--accent)] text-[var(--background)] text-sm px-4 py-2 rounded-full font-bold shadow-lg">
+                                        אחרי
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Empty State */}
+                {beforeImages.length === 0 && afterImages.length === 0 && (
                     <div className="text-center py-20 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200">
                         <p className="text-xl text-gray-400 font-medium">לא נמצאו תמונות בגלריה.</p>
                     </div>

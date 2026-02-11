@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'he_IL',
+    url: 'https://azdesigns.co.il',
     siteName: 'אבי צוובנר - עיצוב פנים',
     title: 'אבי צוובנר - עיצוב פנים',
     description: 'סטודיו לעיצוב פנים המתמחה בחללים מסחריים, מאפיות, ודירות מגורים.',

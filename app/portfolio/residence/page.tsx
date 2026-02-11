@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Images array based on your provided file list
 const residenceImages = [
@@ -29,6 +29,16 @@ const residenceImages = [
 
 export default function ResidenceProjectPage() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+    useEffect(() => {
+        function handleKeyDown(e: KeyboardEvent) {
+            if (e.key === 'Escape') setSelectedImage(null);
+        }
+        if (selectedImage) {
+            document.addEventListener('keydown', handleKeyDown);
+            return () => document.removeEventListener('keydown', handleKeyDown);
+        }
+    }, [selectedImage]);
 
     return (
         <div className="min-h-screen bg-[var(--background)] py-20 px-4">

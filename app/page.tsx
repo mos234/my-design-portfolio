@@ -80,7 +80,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-2 font-bold text-[var(--background)]">
             <a href="tel:+972504673332" className="hover:text-[var(--foreground)]">050-467-3332</a>
-            <a href="mailto:avizvebv@gmail.com" className="hover:text-[var(--foreground)]">avizvebv@gmail.com</a>
+            <a href="mailto:avi.zvebv@gmail.com" className="hover:text-[var(--foreground)]">avi.zvebv@gmail.com</a>
           </div>
           <div className="text-left text-sm font-bold flex flex-col gap-2 text-[var(--background)]">
             <Link href="/privacy-policy" className="hover:text-[var(--foreground)]">מדיניות פרטיות</Link>

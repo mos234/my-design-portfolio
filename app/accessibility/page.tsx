@@ -1,3 +1,10 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'הצהרת נגישות',
+    description: 'הצהרת הנגישות של אתר אבי צוובנר עיצוב פנים.',
+};
+
 export default function AccessibilityStatement() {
     return (
         <div className="min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)] py-20 px-4">
@@ -26,7 +33,7 @@ export default function AccessibilityStatement() {
                         </p>
                         <ul className="list-none space-y-2 mt-2">
                             <li><strong>טלפון:</strong> 050-467333</li>
-                            <li><strong>אימייל:</strong> <a href="mailto:avizvebv@gmail.com" className="text-[var(--accent)] underline hover:text-[var(--foreground)]">avizvebv@gmail.com</a></li>
+                            <li><strong>אימייל:</strong> <a href="mailto:avi.zvebv@gmail.com" className="text-[var(--accent)] underline hover:text-[var(--foreground)]">avi.zvebv@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>

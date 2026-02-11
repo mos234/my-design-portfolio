@@ -1,3 +1,10 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'תהליך העבודה',
+    description: 'תהליך העבודה בסטודיו אבי צוובנר – מפגישת היכרות, דרך תוכניות ושפה עיצובית, ועד פיקוח מקצועי.',
+};
+
 export default function ProcessPage() {
     const steps = [
         {

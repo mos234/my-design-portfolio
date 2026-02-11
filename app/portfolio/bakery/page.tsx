@@ -21,6 +21,16 @@ export default function Bakery() {
         setAfterImages(after);
     }, []);
 
+    useEffect(() => {
+        function handleKeyDown(e: KeyboardEvent) {
+            if (e.key === 'Escape') setSelectedImage(null);
+        }
+        if (selectedImage) {
+            document.addEventListener('keydown', handleKeyDown);
+            return () => document.removeEventListener('keydown', handleKeyDown);
+        }
+    }, [selectedImage]);
+
     return (
         <div className="min-h-screen bg-[var(--background)] py-12 px-6 font-sans">
             <div className="max-w-7xl mx-auto space-y-16">

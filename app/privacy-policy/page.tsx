@@ -1,3 +1,10 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'מדיניות פרטיות',
+    description: 'מדיניות הפרטיות של אתר אבי צוובנר עיצוב פנים.',
+};
+
 export default function PrivacyPolicy() {
     return (
         <div className="min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)] py-20 px-4">
@@ -28,7 +35,7 @@ export default function PrivacyPolicy() {
                     <div>
                         <h3 className="text-2xl font-black mb-3">3. יצירת קשר</h3>
                         <p>
-                            לכל שאלה בנושא מדיניות הפרטיות, ניתן לפנות בכתובת המייל: <a href="mailto:avizvebv@gmail.com" className="text-[var(--accent)] underline hover:text-[var(--foreground)]">avizvebv@gmail.com</a>
+                            לכל שאלה בנושא מדיניות הפרטיות, ניתן לפנות בכתובת המייל: <a href="mailto:avi.zvebv@gmail.com" className="text-[var(--accent)] underline hover:text-[var(--foreground)]">avi.zvebv@gmail.com</a>
                         </p>
                     </div>
                 </div>

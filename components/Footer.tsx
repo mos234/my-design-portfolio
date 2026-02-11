@@ -17,7 +17,7 @@ export default function Footer() {
                         <h4 className="font-black text-text mb-4">פרטי קשר</h4>
                         <ul className="space-y-2 text-lg font-medium text-text">
                             <li>050-467333</li>
-                            <li>avizvebv@gmail.com</li>
+                            <li>avi.zvebv@gmail.com</li>
                         </ul>
                     </div>
 

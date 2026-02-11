@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+    title: 'אודות',
+    description: 'הכירו את אבי צוובנר – בוגר לימודי עיצוב פנים בטכניון, מנוסה בהפקות ואירועים, ומתמחה בעיצוב חללים מסחריים ומגורים.',
+};
 
 export default function AboutPage() {
     return (

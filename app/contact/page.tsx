@@ -1,4 +1,33 @@
+'use client';
+
+import { useState, type FormEvent } from 'react';
+
 export default function ContactPage() {
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [message, setMessage] = useState('');
+    const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+
+    function handleSubmit(e: FormEvent) {
+        e.preventDefault();
+
+        const newErrors: { name?: string; phone?: string } = {};
+        if (!name.trim()) newErrors.name = 'נא למלא שם מלא';
+        if (!phone.trim()) newErrors.phone = 'נא למלא מספר טלפון';
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setErrors({});
+
+        const whatsappNumber = '972504673332';
+        const text = `שלום, שמי ${name.trim()}\nטלפון: ${phone.trim()}${message.trim() ? `\n${message.trim()}` : ''}`;
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
     return (
         <div className="min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)] py-20 px-4">
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
@@ -30,7 +59,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="font-black text-2xl mb-1">אימייל</h3>
-                                <a href="mailto:avizvebv@gmail.com" className="block text-xl font-bold hover:text-[var(--accent)] transition-colors">avizvebv@gmail.com</a>
+                                <a href="mailto:avi.zvebv@gmail.com" className="block text-xl font-bold hover:text-[var(--accent)] transition-colors">avi.zvebv@gmail.com</a>
                             </div>
                         </div>
 
@@ -48,23 +77,48 @@ export default function ContactPage() {
 
                 {/* Contact Form */}
                 <div className="bg-white p-10 rounded-3xl shadow-xl border border-[var(--foreground)]/5 mt-8 md:mt-0">
-                    <form className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                         <div>
                             <label htmlFor="name" className="block text-lg font-bold mb-2">שם מלא</label>
-                            <input type="text" id="name" className="w-full px-5 py-4 rounded-xl border-2 border-[var(--foreground)]/10 focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)]" placeholder="ישראל ישראלי" />
+                            <input
+                                type="text"
+                                id="name"
+                                required
+                                value={name}
+                                onChange={(e) => { setName(e.target.value); setErrors((p) => ({ ...p, name: undefined })); }}
+                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.name ? 'border-red-500' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)]`}
+                                placeholder="ישראל ישראלי"
+                            />
+                            {errors.name && <p className="text-red-500 text-sm mt-1 font-medium">{errors.name}</p>}
                         </div>
 
                         <div>
                             <label htmlFor="phone" className="block text-lg font-bold mb-2">טלפון</label>
-                            <input type="tel" id="phone" className="w-full px-5 py-4 rounded-xl border-2 border-[var(--foreground)]/10 focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)]" placeholder="050-0000000" />
+                            <input
+                                type="tel"
+                                id="phone"
+                                required
+                                value={phone}
+                                onChange={(e) => { setPhone(e.target.value); setErrors((p) => ({ ...p, phone: undefined })); }}
+                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.phone ? 'border-red-500' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)]`}
+                                placeholder="050-0000000"
+                            />
+                            {errors.phone && <p className="text-red-500 text-sm mt-1 font-medium">{errors.phone}</p>}
                         </div>
 
                         <div>
                             <label htmlFor="message" className="block text-lg font-bold mb-2">כיצד אוכל לעזור?</label>
-                            <textarea id="message" rows={4} className="w-full px-5 py-4 rounded-xl border-2 border-[var(--foreground)]/10 focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)]" placeholder="אני מתעניין בעיצוב..."></textarea>
+                            <textarea
+                                id="message"
+                                rows={4}
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                className="w-full px-5 py-4 rounded-xl border-2 border-[var(--foreground)]/10 focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)]"
+                                placeholder="אני מתעניין בעיצוב..."
+                            ></textarea>
                         </div>
 
-                        <button type="button" className="w-full bg-[var(--accent)] text-[var(--background)] font-black text-xl py-5 rounded-xl hover:bg-[var(--foreground)] transition-all transform hover:-translate-y-1 shadow-md">
+                        <button type="submit" className="w-full bg-[var(--accent)] text-[var(--background)] font-black text-xl py-5 rounded-xl hover:bg-[var(--foreground)] transition-all transform hover:-translate-y-1 shadow-md">
                             שלח הודעה
                         </button>
                     </form>

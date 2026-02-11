@@ -39,6 +39,8 @@ export default function Navbar() {
             <button
                 className="md:hidden text-[var(--foreground)] font-black text-xl"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? "סגור תפריט" : "פתח תפריט"}
+                aria-expanded={isMobileMenuOpen}
             >
                 ☰
             </button>

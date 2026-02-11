@@ -13,7 +13,7 @@ export default function AccessibilityStatement() {
 
                 <div className="prose prose-xl max-w-none text-[var(--foreground)]/90 space-y-8 font-medium">
                     <p>
-                        אנו ב"אבי זבנר עיצוב פנים" רואים חשיבות רבה במתן שירות שוויוני לכלל הלקוחות והגולשים ובשיפור הנגישות באתר האינטרנט שלנו.
+                        אנו ב"אבי צוובנר עיצוב פנים" רואים חשיבות רבה במתן שירות שוויוני לכלל הלקוחות והגולשים ובשיפור הנגישות באתר האינטרנט שלנו.
                     </p>
 
                     <div>

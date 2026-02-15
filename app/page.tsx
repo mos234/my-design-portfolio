@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard"; // Import new card
 
@@ -54,7 +53,7 @@ export default function Home() {
           <p className="text-xl text-[var(--accent)] font-bold">הצצה לעבודות האחרונות שלנו</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           <ProjectCard
             title="דירת מגורים יוקרתית"
             subtitle="סיור בגלריה המלאה"
@@ -67,7 +66,30 @@ export default function Home() {
             imageSrc="/gallery/bakery/cover.jpeg"
             href="/portfolio/bakery"
           />
-
+          <ProjectCard
+            title="בית קפה בוטיק | צור הדסה"
+            subtitle="לחץ לצפייה בגלריה"
+            imageSrc="/gallery/boutique-cafe/cover.jpeg"
+            href="/portfolio/boutique-cafe"
+          />
+          <ProjectCard
+            title="מעדניית בשרים מיובשים"
+            subtitle="לחץ לצפייה בגלריה"
+            imageSrc="/gallery/meat-deli/cover.jpeg"
+            href="/portfolio/meat-deli"
+          />
+          <ProjectCard
+            title="מרפסת פנורמית ופינת רביצה"
+            subtitle="לחץ לצפייה בגלריה"
+            imageSrc="/gallery/balcony/cover.jpeg"
+            href="/portfolio/balcony"
+          />
+          <ProjectCard
+            title="עיצוב ותכנון דירת נופש"
+            subtitle="לחץ לצפייה בגלריה"
+            imageSrc="/gallery/vacation-apartment/cover.jpeg"
+            href="/portfolio/vacation-apartment"
+          />
         </div>
       </section>
 

@@ -30,10 +30,37 @@ export default function PortfolioPage() {
                         href="/portfolio/bakery"
                     />
 
-                    {/* Placeholder for future projects */}
-                    <div className="relative aspect-[4/3] bg-white/10 rounded-3xl border-2 border-[var(--foreground)]/10 flex items-center justify-center opacity-50 grayscale">
-                        <span className="text-xl font-bold">פרויקט בקרוב...</span>
-                    </div>
+                    {/* Boutique Cafe Project */}
+                    <ProjectCard
+                        title="בית קפה בוטיק | צור הדסה"
+                        subtitle="לחץ לצפייה בגלריה"
+                        imageSrc="/gallery/boutique-cafe/cover.jpeg"
+                        href="/portfolio/boutique-cafe"
+                    />
+
+                    {/* Meat Deli Project */}
+                    <ProjectCard
+                        title="מעדניית בשרים מיובשים"
+                        subtitle="לחץ לצפייה בגלריה"
+                        imageSrc="/gallery/meat-deli/cover.jpeg"
+                        href="/portfolio/meat-deli"
+                    />
+
+                    {/* Balcony Project */}
+                    <ProjectCard
+                        title="מרפסת פנורמית ופינת רביצה"
+                        subtitle="לחץ לצפייה בגלריה"
+                        imageSrc="/gallery/balcony/cover.jpeg"
+                        href="/portfolio/balcony"
+                    />
+
+                    {/* Vacation Apartment Project */}
+                    <ProjectCard
+                        title="עיצוב ותכנון דירת נופש"
+                        subtitle="לחץ לצפייה בגלריה"
+                        imageSrc="/gallery/vacation-apartment/cover.jpeg"
+                        href="/portfolio/vacation-apartment"
+                    />
                 </div>
             </div>
         </div>

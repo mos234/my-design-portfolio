@@ -9,7 +9,8 @@ export default function Home() {
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">
         <div className="max-w-full animate-fade-in-up space-y-8">
 
-          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--accent)] leading-tight sm:whitespace-nowrap drop-shadow-lg">
+          <h1 className="text-3xl xs:text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--accent)] leading-snug drop-shadow-lg"
+              style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
             מעצבים לך את הדמיון
           </h1>
 

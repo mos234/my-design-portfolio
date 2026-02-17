@@ -7,7 +7,7 @@ export default function SocialButtons() {
     const message = "היי אבי, אשמח לשמוע פרטים על עיצוב פנים";
 
     return (
-        <div className="fixed left-6 bottom-6 flex flex-col gap-4 z-40">
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex flex-row gap-3 sm:flex-col sm:left-6 sm:bottom-6 sm:translate-x-0 z-40">
 
             {/* WhatsApp */}
             <a

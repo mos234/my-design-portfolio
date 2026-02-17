@@ -3,7 +3,7 @@ import ProjectCard from "@/components/ProjectCard"; // Import new card
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col font-sans overflow-x-hidden">
 
       {/* Hero Section */}
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">

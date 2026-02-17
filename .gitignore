@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# digido-skills system
+.agent/
+.gemini/
+.claude/
+.digido/templates/
+.digido/examples/

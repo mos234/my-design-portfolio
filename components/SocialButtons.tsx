@@ -2,8 +2,13 @@
 
 import React from 'react';
 
+function getPhone() {
+    const p = ['972','504','673','332'];
+    return p.join('');
+}
+
 export default function SocialButtons() {
-    const whatsappNumber = "972504673332";
+    const whatsappNumber = getPhone();
     const message = "היי אבי, אשמח לשמוע פרטים על עיצוב פנים";
 
     return (

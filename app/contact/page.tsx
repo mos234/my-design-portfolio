@@ -22,7 +22,7 @@ export default function ContactPage() {
 
         setErrors({});
 
-        const whatsappNumber = '972504673332';
+        const whatsappNumber = ['972','504','673','332'].join('');
         const text = `שלום, שמי ${name.trim()}\nטלפון: ${phone.trim()}${message.trim() ? `\n${message.trim()}` : ''}`;
         const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
         window.open(url, '_blank', 'noopener,noreferrer');
@@ -48,7 +48,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="font-black text-2xl mb-1">טלפון</h3>
-                                <a href="tel:+972504673332" className="block text-xl font-bold hover:text-[var(--accent)] transition-colors" dir="ltr">050-467-332</a>
+                                <a href={`tel:+${['972','504','673','332'].join('')}`} className="block text-xl font-bold hover:text-[var(--accent)] transition-colors" dir="ltr">050-467-3332</a>
                                 <p className="text-lg opacity-60 font-medium mt-1">זמין לשיחות והודעות WhatsApp</p>
                             </div>
                         </div>

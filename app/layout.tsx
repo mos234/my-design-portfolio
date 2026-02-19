@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 // Rebuild trigger: Colors swapped
 import SocialButtons from '../components/SocialButtons';
+import CookieConsent from '../components/CookieConsent';
 
 import Navbar from '../components/Navbar';
 
@@ -62,6 +63,7 @@ export default function RootLayout({
           {children}
         </main>
         <SocialButtons />
+        <CookieConsent />
       </body>
     </html>
   );

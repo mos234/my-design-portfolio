@@ -33,7 +33,22 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div>
-                        <h3 className="text-2xl font-black mb-3">3. יצירת קשר</h3>
+                        <h3 className="text-2xl font-black mb-3">3. שימוש בקוקיז (Cookies)</h3>
+                        <p>
+                            אתר זה משתמש בקוקיז טכניים בלבד, הנדרשים לתפעול תקין של האתר:
+                        </p>
+                        <ul className="list-disc list-inside space-y-2 mt-3 mr-4">
+                            <li><strong>קוקיז תפעוליים</strong> – קוקיז של שירות האחסון (Netlify) לצורך ניתוב תעבורה ואבטחה.</li>
+                            <li><strong>Google Fonts</strong> – האתר טוען גופנים משרתי Google, אשר עשויים להגדיר קוקיז טכניים.</li>
+                            <li><strong>העדפות משתמש</strong> – שמירת הסכמתכם להודעת הקוקיז באחסון מקומי (localStorage).</li>
+                        </ul>
+                        <p className="mt-3">
+                            אנו <strong>לא משתמשים</strong> בקוקיז שיווקיים, קוקיז מעקב, או שירותי אנליטיקס. אין באתר כלים למעקב אחר פעילות הגולשים.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 className="text-2xl font-black mb-3">4. יצירת קשר</h3>
                         <p>
                             לכל שאלה בנושא מדיניות הפרטיות, ניתן לפנות בכתובת המייל: <a href="mailto:avi.zvebv@gmail.com" className="text-[var(--accent)] underline hover:text-[var(--foreground)]">avi.zvebv@gmail.com</a>
                         </p>

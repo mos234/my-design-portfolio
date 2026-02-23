@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'הצהרת נגישות',
-    description: 'הצהרת הנגישות של אתר אבי צוובנר עיצוב פנים.',
+    title: 'הצהרת נגישות - מחויבות לנגישות דיגיטלית',
+    description: 'הצהרת הנגישות של סטודיו AZ Designs לעיצוב פנים. האתר מותאם לתקן נגישות ישראלי ומאפשר שימוש לכלל המשתמשים.',
 };
 
 export default function AccessibilityStatement() {

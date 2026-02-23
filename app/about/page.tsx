@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-    title: 'אודות',
+    title: 'אודות הסטודיו - אדריכלות ועיצוב פנים',
     description: 'הכירו את אבי צוובנר – בוגר לימודי עיצוב פנים בטכניון, מנוסה בהפקות ואירועים, ומתמחה בעיצוב חללים מסחריים ומגורים.',
 };
 

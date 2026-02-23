@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'מדיניות פרטיות',
-    description: 'מדיניות הפרטיות של אתר אבי צוובנר עיצוב פנים.',
+    title: 'מדיניות פרטיות - הגנה על פרטיותך',
+    description: 'מדיניות הפרטיות של סטודיו AZ Designs לעיצוב פנים. מידע על איסוף נתונים, שימוש בקוקיז ואבטחת פרטיות המשתמשים באתר.',
 };
 
 export default function PrivacyPolicy() {

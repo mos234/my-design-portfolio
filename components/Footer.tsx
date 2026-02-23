@@ -25,7 +25,6 @@ export default function Footer() {
                         <h4 className="font-black text-text mb-4">ניווט</h4>
                         <div className="flex flex-col gap-2 font-bold text-text">
                             <Link href="/privacy-policy" className="hover:text-primary">מדיניות פרטיות</Link>
-                            <Link href="/accessibility" className="hover:text-primary">הצהרת נגישות</Link>
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ import './globals.css';
 // Rebuild trigger: Colors swapped
 import SocialButtons from '../components/SocialButtons';
 import CookieConsent from '../components/CookieConsent';
+import AccessibilityWidget from '../components/AccessibilityWidget';
 
 import Navbar from '../components/Navbar';
 
@@ -64,6 +65,7 @@ export default function RootLayout({
         </main>
         <SocialButtons />
         <CookieConsent />
+        <AccessibilityWidget />
       </body>
     </html>
   );

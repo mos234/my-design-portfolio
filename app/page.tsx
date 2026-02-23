@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard"; // Import new card
+
+export const metadata: Metadata = {
+  title: 'אבי צוובנר - עיצוב פנים מקצועי לחללים מסחריים ומגורים',
+  description: 'סטודיו AZ Designs לעיצוב פנים – מתמחים בחללים מסחריים, בתי קפה, מאפיות ודירות מגורים. בוגר לימודי חוץ בטכניון. צרו קשר לייעוץ חינם.',
+};
 
 export default function Home() {
   return (
@@ -10,7 +16,7 @@ export default function Home() {
         <div className="max-w-full animate-fade-in-up space-y-8">
 
           <h1 className="text-[9vw] md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--accent)] leading-snug drop-shadow-lg px-2 scale-y-[1.2] md:scale-y-100"
-              style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
+            style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
             מעצבים לך את הדמיון
           </h1>
 
@@ -107,7 +113,6 @@ export default function Home() {
           </div>
           <div className="text-left text-sm font-bold flex flex-col gap-2 text-[var(--background)]">
             <Link href="/privacy-policy" className="hover:text-[var(--foreground)]">מדיניות פרטיות</Link>
-            <Link href="/accessibility" className="hover:text-[var(--foreground)]">הצהרת נגישות</Link>
           </div>
         </div>
         <p className="text-[var(--background)]/60 text-sm">© 2026 אבי צוובנר - עיצוב פנים. כל הזכויות שמורות.</p>

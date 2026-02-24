@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import ProjectGallery from '@/components/ProjectGallery';
 
 export const metadata: Metadata = {
-    title: 'שיפוץ מאפייה – לפני ואחרי - אדריכלות ועיצוב פנים',
-    description: 'שיפוץ ועיצוב מאפייה מקצועית – גלריית לפני ואחרי. סטודיו AZ Designs לעיצוב חללים מסחריים ומאפיות.',
+    title: 'שיפוץ מאפייה מקצועית – עיצוב פנים ייחודי | AZ Designs',
+    description: 'שיפוץ ועיצוב מאפייה מקצועית – גלריית לפני ואחרי מרשימה. סטודיו AZ Designs לעיצוב חללים מסחריים ומאפיות.',
     openGraph: {
-        title: 'שיפוץ מאפייה – לפני ואחרי - AZ Designs',
+        title: 'שיפוץ מאפייה מקצועית – עיצוב פנים ייחודי | AZ Designs',
         description: 'שיפוץ ועיצוב מאפייה מקצועית – גלריית לפני ואחרי.',
         images: ['/gallery/bakery/cover.jpeg'],
     },

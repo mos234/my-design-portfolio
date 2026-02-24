@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import ProjectGallery from '@/components/ProjectGallery';
 
 export const metadata: Metadata = {
-    title: 'בית קפה בוטיק | צור הדסה - אדריכלות ועיצוב פנים',
-    description: 'עיצוב בית קפה בוטיק בצור הדסה – שילוב אווירה חמה עם עיצוב מודרני. סטודיו AZ Designs לעיצוב חללים מסחריים.',
+    title: 'עיצוב פנים לבית קפה בוטיק בצור הדסה | AZ Designs',
+    description: 'עיצוב בית קפה בוטיק בצור הדסה – שילוב אווירה חמה עם עיצוב מודרני וייחודי. סטודיו AZ Designs לעיצוב חללים מסחריים.',
     openGraph: {
-        title: 'בית קפה בוטיק | צור הדסה - AZ Designs',
+        title: 'עיצוב פנים לבית קפה בוטיק בצור הדסה | AZ Designs',
         description: 'עיצוב בית קפה בוטיק בצור הדסה – שילוב אווירה חמה עם עיצוב מודרני.',
         images: ['/gallery/boutique-cafe/cover.jpeg'],
     },

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-    title: 'אודות הסטודיו - אדריכלות ועיצוב פנים',
-    description: 'הכירו את אבי צוובנר – בוגר לימודי עיצוב פנים בטכניון, מנוסה בהפקות ואירועים, ומתמחה בעיצוב חללים מסחריים ומגורים.',
+    title: 'סטודיו AZ Designs - עיצוב פנים מקצועי עם אבי צוובנר',
+    description: 'הכירו את אבי צוובנר – בוגר לימודי עיצוב פנים בטכניון, מומחה בעיצוב חללים מסחריים ובתים פרטיים, עם ניסיון עשיר בהפקות ואירועים.',
 };
 
 export default function AboutPage() {

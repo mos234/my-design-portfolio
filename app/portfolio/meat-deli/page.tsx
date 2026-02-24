@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import ProjectGallery from '@/components/ProjectGallery';
 
 export const metadata: Metadata = {
-    title: 'מעדניית בשרים מיובשים - אדריכלות ועיצוב פנים',
-    description: 'עיצוב מעדנייה ייחודית לבשרים מיובשים – חלל מסחרי בסגנון תעשייתי עם אלגנטיות. סטודיו AZ Designs.',
+    title: 'עיצוב פנים למעדניית בשרים מיובשים - AZ Designs',
+    description: 'עיצוב מעדנייה ייחודית לבשרים מיובשים – חלל מסחרי בסגנון תעשייתי עם אלגנטיות מרשימה. סטודיו AZ Designs.',
     openGraph: {
-        title: 'מעדניית בשרים מיובשים - AZ Designs',
+        title: 'עיצוב פנים למעדניית בשרים מיובשים - AZ Designs',
         description: 'עיצוב מעדנייה ייחודית לבשרים מיובשים – חלל מסחרי בסגנון תעשייתי עם אלגנטיות.',
         images: ['/gallery/meat-deli/cover.jpeg'],
     },

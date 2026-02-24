@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import ProjectGallery from '@/components/ProjectGallery';
 
 export const metadata: Metadata = {
-    title: 'מרפסת פנורמית ופינת רביצה - אדריכלות ועיצוב פנים',
-    description: 'עיצוב מרפסת פנורמית עם פינת רביצה – תכנון מרחב חיצוני מודרני ונוח. סטודיו AZ Designs לעיצוב פנים.',
+    title: 'עיצוב מרפסת פנורמית ופינת רביצה מודרנית - AZ Designs',
+    description: 'עיצוב מרפסת פנורמית עם פינת רביצה מודרנית ונוחה – תכנון מרחב חיצוני ייחודי. סטודיו AZ Designs לעיצוב פנים.',
     openGraph: {
-        title: 'מרפסת פנורמית ופינת רביצה - AZ Designs',
+        title: 'עיצוב מרפסת פנורמית ופינת רביצה מודרנית - AZ Designs',
         description: 'עיצוב מרפסת פנורמית עם פינת רביצה – תכנון מרחב חיצוני מודרני ונוח.',
         images: ['/gallery/balcony/cover.jpeg'],
     },

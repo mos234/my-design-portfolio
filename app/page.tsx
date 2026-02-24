@@ -3,8 +3,8 @@ import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard"; // Import new card
 
 export const metadata: Metadata = {
-  title: 'אבי צוובנר - עיצוב פנים מקצועי לחללים מסחריים ומגורים',
-  description: 'סטודיו AZ Designs לעיצוב פנים – מתמחים בחללים מסחריים, בתי קפה, מאפיות ודירות מגורים. בוגר לימודי חוץ בטכניון. צרו קשר לייעוץ חינם.',
+  title: 'סטודיו AZ Designs - עיצוב פנים מקצועי לחללים מסחריים ומגורים',
+  description: 'סטודיו AZ Designs מתמחה בעיצוב פנים לחללים מסחריים, בתי קפה ודירות מגורים. בוגר לימודי חוץ בטכניון. הפוך את החלל שלך למקום ייחודי – ייעוץ חינם.',
 };
 
 export default function Home() {

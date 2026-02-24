@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "צור קשר - ייעוץ עיצוב פנים חינם",
+  title: "צור קשר עם סטודיו AZ Designs - ייעוץ עיצוב פנים חינם",
   description:
-    "צרו קשר עם סטודיו אבי צוובנר לעיצוב פנים. טלפון, אימייל וטופס יצירת קשר.",
+    "צרו קשר עם אבי צוובנר לייעוץ עיצוב פנים חינם. טלפון, אימייל וטופס יצירת קשר זמינים כאן.",
 };
 
 export default function ContactLayout({

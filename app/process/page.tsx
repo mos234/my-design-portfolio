@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'תהליך העבודה - מפגישת היכרות ועד פיקוח מקצועי',
-    description: 'תהליך העבודה בסטודיו AZ Designs לעיצוב פנים – מפגישת היכרות, הכנת תוכניות מפורטות, גיבוש שפה עיצובית ופיקוח מקצועי עד תום הפרויקט.',
+    title: 'תהליך העבודה בעיצוב פנים - AZ Designs',
+    description: 'גלה את תהליך העבודה שלנו בעיצוב פנים – מפגישת היכרות, הכנת תוכניות מפורטות, גיבוש שפה עיצובית ופיקוח מקצועי עד תום הפרויקט.',
 };
 
 export default function ProcessPage() {
@@ -64,7 +64,7 @@ export default function ProcessPage() {
                         <div key={step.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
 
                             {/* Number Bubble */}
-                            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[var(--foreground)] text-[var(--background)] border-4 border-[var(--background)] text-2xl font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg">
+                            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[var(--accent)] text-[var(--foreground)] border-4 border-[var(--background)] text-2xl font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg">
                                 {step.id}
                             </div>
 

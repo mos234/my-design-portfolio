@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "תיק עבודות - פרויקטים נבחרים בעיצוב פנים",
+  title: "תיק עבודות בעיצוב פנים - פרויקטים של AZ Designs",
   description:
-    "תיק העבודות של סטודיו אבי צוובנר – פרויקטים נבחרים בעיצוב פנים: דירות מגורים, מאפיות וחללים מסחריים.",
+    "גלו את תיק העבודות של AZ Designs – עיצוב פנים לחללים מסחריים, בתי קפה, מאפיות ודירות מגורים.",
 };
 
 export default function PortfolioLayout({

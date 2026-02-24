@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import ProjectGallery from '@/components/ProjectGallery';
 
 export const metadata: Metadata = {
-    title: 'דירת מגורים יוקרתית - אדריכלות ועיצוב פנים',
+    title: 'עיצוב פנים יוקרתי לדירת מגורים - AZ Designs',
     description: 'עיצוב פנים יוקרתי ומודרני לדירת מגורים – תכנון חללים אלגנטיים ופונקציונליים. סטודיו AZ Designs.',
     openGraph: {
-        title: 'דירת מגורים יוקרתית - AZ Designs',
+        title: 'עיצוב פנים יוקרתי לדירת מגורים - AZ Designs',
         description: 'עיצוב פנים יוקרתי ומודרני לדירת מגורים – תכנון חללים אלגנטיים ופונקציונליים.',
         images: ['/gallery/residence/cover.jpeg'],
     },

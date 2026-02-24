@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'מדיניות פרטיות - הגנה על פרטיותך',
+    title: 'מדיניות פרטיות - שמירה על פרטיותך ב-AZ Designs',
     description: 'מדיניות הפרטיות של סטודיו AZ Designs לעיצוב פנים. מידע על איסוף נתונים, שימוש בקוקיז ואבטחת פרטיות המשתמשים באתר.',
 };
 

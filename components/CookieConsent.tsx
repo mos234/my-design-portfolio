@@ -24,7 +24,7 @@ export default function CookieConsent() {
     return (
         <div className="fixed bottom-0 inset-x-0 z-50 p-4 bg-[var(--foreground)] text-[var(--background)] shadow-2xl">
             <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4 text-center sm:text-right">
-                <p className="text-sm font-medium flex-1">
+                <p className="text-sm font-medium flex-1 text-[var(--accent)]">
                     אתר זה משתמש בקוקיז טכניים לשיפור חווית הגלישה.
                     לפרטים נוספים ראו את{' '}
                     <Link href="/privacy-policy" className="underline font-bold hover:text-[var(--accent)]">

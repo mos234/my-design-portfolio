@@ -11,14 +11,16 @@ export default function Navbar() {
         <nav className="w-full px-6 py-2 flex justify-between items-center bg-[var(--background)]/80 sticky top-0 z-50 border-b border-[var(--foreground)]/5 backdrop-blur-md h-16 md:h-20">
             <div className="flex items-center h-full">
                 {/* Logo Container */}
-                <Link href="/" className="relative h-full w-32 md:w-40 transition-all duration-300">
-                    <Image
-                        src="/logo.jpeg"
-                        alt="אבי צוובנר - עיצוב פנים"
-                        fill
-                        className="object-contain object-right"
-                        priority
-                    />
+                <Link href="/" className="h-full flex items-center transition-all duration-300">
+                    <div className="relative w-12 h-12 md:w-14 md:h-14 bg-black rounded-full">
+                        <Image
+                            src="/logo-new1.png"
+                            alt="אבי צוובנר - עיצוב פנים"
+                            fill
+                            className="object-contain p-1"
+                            priority
+                        />
+                    </div>
                 </Link>
             </div>
 

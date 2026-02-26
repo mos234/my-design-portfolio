@@ -53,7 +53,7 @@ export default function ProcessPage() {
         <div className="min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)] py-20 px-4">
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-20">
-                    <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tight">תהליך העבודה</h1>
+                    <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tight text-[var(--accent)]">תהליך העבודה</h1>
                     <p className="text-xl md:text-2xl font-bold text-[var(--accent)] max-w-3xl mx-auto">
                         כל פרויקט מנוהל בצורה סדורה ומקצועית, כדי להבטיח שקט נפשי ותוצאה מושלמת.
                     </p>

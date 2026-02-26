@@ -13,7 +13,7 @@ export default function AboutPage() {
 
                 {/* Header */}
                 <div className="text-center space-y-6">
-                    <h1 className="text-5xl md:text-6xl font-black tracking-tight">אודות הסטודיו</h1>
+                    <h1 className="text-5xl md:text-6xl font-black tracking-tight text-[var(--accent)]">אודות הסטודיו</h1>
                     <p className="text-2xl font-bold text-[var(--accent)]">הסיפור שמאחורי העיצוב</p>
                 </div>
 

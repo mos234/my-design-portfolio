@@ -7,7 +7,7 @@ export default function PortfolioPage() {
         <div className="min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)] py-20 px-4">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-6xl font-black mb-6">תיק עבודות</h1>
+                    <h1 className="text-5xl md:text-6xl font-black mb-6 text-[var(--accent)]">תיק עבודות</h1>
                     <p className="text-xl md:text-2xl text-[var(--accent)] font-bold mb-8">
                         בחר פרויקט לצפייה בגלריה המלאה
                     </p>

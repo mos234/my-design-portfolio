@@ -86,7 +86,7 @@ export default function ContactPage() {
                                 required
                                 value={name}
                                 onChange={(e) => { setName(e.target.value); setErrors((p) => ({ ...p, name: undefined })); }}
-                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.name ? 'border-red-500' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-white placeholder:text-white/50`}
+                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.name ? 'border-red-500' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--accent)]`}
                                 placeholder="ישראל ישראלי"
                             />
                             {errors.name && <p className="text-red-500 text-sm mt-1 font-medium">{errors.name}</p>}
@@ -100,7 +100,7 @@ export default function ContactPage() {
                                 required
                                 value={phone}
                                 onChange={(e) => { setPhone(e.target.value); setErrors((p) => ({ ...p, phone: undefined })); }}
-                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.phone ? 'border-red-500' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-white placeholder:text-white/50`}
+                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.phone ? 'border-red-500' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--accent)]`}
                                 placeholder="050-0000000"
                             />
                             {errors.phone && <p className="text-red-500 text-sm mt-1 font-medium">{errors.phone}</p>}
@@ -113,7 +113,7 @@ export default function ContactPage() {
                                 rows={4}
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
-                                className="w-full px-5 py-4 rounded-xl border-2 border-[var(--foreground)]/10 focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-white placeholder:text-white/50"
+                                className="w-full px-5 py-4 rounded-xl border-2 border-[var(--foreground)]/10 focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--accent)]"
                                 placeholder="אני מתעניין בעיצוב..."
                             ></textarea>
                         </div>

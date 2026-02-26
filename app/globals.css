@@ -72,6 +72,12 @@ html.a11y-readable-font h6 {
   font-weight: 700 !important;
 }
 
+/* Green placeholder text in contact form inputs on brown background */
+.bg-\[var\(--background\)\]::placeholder {
+  color: var(--accent);
+  opacity: 0.6;
+}
+
 html.a11y-underline-links a {
   text-decoration: underline !important;
   text-decoration-thickness: 2px !important;

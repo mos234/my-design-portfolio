@@ -8,9 +8,10 @@ interface ProjectGalleryProps {
     title: string;
     subtitle: string;
     images: string[];
+    description?: string;
 }
 
-export default function ProjectGallery({ title, subtitle, images }: ProjectGalleryProps) {
+export default function ProjectGallery({ title, subtitle, images, description }: ProjectGalleryProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const goNext = useCallback(() => {
@@ -51,6 +52,13 @@ export default function ProjectGallery({ title, subtitle, images }: ProjectGalle
                         &larr; חזרה לתיק העבודות
                     </Link>
                 </div>
+
+                {/* Description */}
+                {description && (
+                    <p className="text-lg text-[var(--accent)] leading-relaxed mb-8 text-right">
+                        {description}
+                    </p>
+                )}
 
                 {/* Main Image Viewer */}
                 <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-black/5 mb-6">

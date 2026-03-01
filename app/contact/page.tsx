@@ -79,7 +79,7 @@ export default function ContactPage() {
                 <div className="bg-white p-10 rounded-3xl shadow-xl border border-[var(--foreground)]/5 mt-8 md:mt-0">
                     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                         <div>
-                            <label htmlFor="name" className="block text-lg font-bold mb-2">שם מלא</label>
+                            <label htmlFor="name" className="block text-lg font-bold mb-2 text-[var(--accent)]">שם מלא</label>
                             <input
                                 type="text"
                                 id="name"
@@ -93,7 +93,7 @@ export default function ContactPage() {
                         </div>
 
                         <div>
-                            <label htmlFor="phone" className="block text-lg font-bold mb-2">טלפון</label>
+                            <label htmlFor="phone" className="block text-lg font-bold mb-2 text-[var(--accent)]">טלפון</label>
                             <input
                                 type="tel"
                                 id="phone"
@@ -107,7 +107,7 @@ export default function ContactPage() {
                         </div>
 
                         <div>
-                            <label htmlFor="message" className="block text-lg font-bold mb-2">כיצד אוכל לעזור?</label>
+                            <label htmlFor="message" className="block text-lg font-bold mb-2 text-[var(--accent)]">כיצד אוכל לעזור?</label>
                             <textarea
                                 id="message"
                                 rows={4}

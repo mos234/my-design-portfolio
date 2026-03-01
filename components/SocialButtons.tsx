@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 
 function getPhone() {
     const p = ['972','504','673','332'];
@@ -12,7 +11,7 @@ export default function SocialButtons() {
     const message = "היי אבי, אשמח לשמוע פרטים על עיצוב פנים";
 
     return (
-        <div className="flex flex-row gap-3 justify-center py-4 sm:fixed sm:left-6 sm:bottom-6 sm:flex-col sm:py-0 sm:z-40">
+        <div className="flex flex-row gap-3 justify-center py-4 sm:fixed sm:left-6 sm:bottom-24 sm:flex-col sm:py-0 sm:z-[60]">
 
             {/* WhatsApp */}
             <a
@@ -40,10 +39,11 @@ export default function SocialButtons() {
             {/* Instagram */}
             <a
                 href="#"
-                className="w-9 h-9 sm:w-12 sm:h-12 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                className="w-9 h-9 sm:w-12 sm:h-12 text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                style={{ background: 'linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)' }}
                 aria-label="עקוב באינסטגרם"
             >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-6 sm:h-6"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-6 sm:h-6"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle></svg>
             </a>
 
         </div>

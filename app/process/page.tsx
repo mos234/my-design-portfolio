@@ -5,6 +5,42 @@ export const metadata: Metadata = {
     description: 'גלה את תהליך העבודה שלנו בעיצוב פנים – מפגישת היכרות, הכנת תוכניות מפורטות, גיבוש שפה עיצובית ופיקוח מקצועי עד תום הפרויקט.',
 };
 
+const faqItems = [
+    {
+        question: "כמה עולה עיצוב פנים לדירה?",
+        answer: "עלות עיצוב פנים לדירה תלויה בגודל הנכס והיקף השירות. בדרך כלל שכר מעצב נע בין 150 ל-400 ₪ לשעה, או אחוז מתקציב הפרויקט. בסטודיו AZ Designs אנחנו מציעים הצעת מחיר מפורטת ושקופה לאחר פגישת היכרות ראשונית – ללא התחייבות.",
+    },
+    {
+        question: "כמה זמן לוקח פרויקט עיצוב פנים מלא?",
+        answer: "פרויקט עיצוב פנים לדירה ממוצעת נמשך בין 3 ל-6 חודשים מהתכנון ועד הביצוע. פרויקטים מסחריים כמו בתי קפה ומסעדות עשויים להימשך בין חודש לשלושה חודשים, תלוי בהיקף העבודה.",
+    },
+    {
+        question: "מה ההבדל בין מעצב פנים לאדריכל?",
+        answer: "אדריכל מתמחה בעיקר במבנה ובחזית הבניין, ואחראי על היתרי בנייה ושינויים מבניים. מעצב פנים, כמו סטודיו AZ Designs, מתמקד בחלל הפנימי – פריסה, חומרים, צבעים, תאורה ואווירה כוללת – ומביא את החיים לתוך המבנה.",
+    },
+    {
+        question: "האם אתם עובדים גם על עסקים מסחריים?",
+        answer: "כן. סטודיו AZ Designs מתמחה גם בעיצוב חללים מסחריים: בתי קפה, מסעדות, מאפיות, חנויות ועסקים קטנים. יש לנו ניסיון רחב בסגנונות שונים ובהתאמת העיצוב לברנד ולקהל היעד של העסק.",
+    },
+    {
+        question: "האם ניתן לקבל ייעוץ ראשוני ללא עלות?",
+        answer: "כן. פגישת ההיכרות הראשונה בסטודיו AZ Designs היא ללא עלות וללא התחייבות. בפגישה זו נבין את הצרכים שלכם, נסייר בנכס, ונבנה יחד מסגרת ראשונית לפרויקט.",
+    },
+];
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer,
+        },
+    })),
+};
+
 export default function ProcessPage() {
     const steps = [
         {
@@ -51,6 +87,10 @@ export default function ProcessPage() {
 
     return (
         <div className="min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)] py-20 px-4">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-20">
                     <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tight text-[var(--accent)]">תהליך העבודה</h1>
@@ -77,6 +117,33 @@ export default function ProcessPage() {
                         </div>
                     ))}
                 </div>
+
+                {/* FAQ Section */}
+                <div className="mt-28">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-black text-[var(--accent)] mb-4">שאלות נפוצות</h2>
+                        <p className="text-lg text-[var(--foreground)]/70 font-medium">כל מה שרציתם לדעת לפני שמתחילים</p>
+                    </div>
+                    <div className="space-y-4">
+                        {faqItems.map((item, index) => (
+                            <details
+                                key={index}
+                                className="group bg-white rounded-2xl border-2 border-[var(--foreground)]/5 hover:border-[var(--accent)] transition-all shadow-sm"
+                            >
+                                <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-black text-lg text-[var(--foreground)] text-right">
+                                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent)]/10 text-[var(--accent)] font-black shrink-0 group-open:bg-[var(--accent)] group-open:text-white transition-all">
+                                        +
+                                    </span>
+                                    <span className="flex-1 mr-4">{item.question}</span>
+                                </summary>
+                                <p className="px-6 pb-6 text-[var(--foreground)]/75 leading-relaxed font-medium text-right">
+                                    {item.answer}
+                                </p>
+                            </details>
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </div>
     );

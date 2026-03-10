@@ -2,6 +2,42 @@ import type { Metadata } from 'next';
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard"; // Import new card
 
+const homeFaqItems = [
+    {
+        question: "מה זה סטודיו AZ Designs?",
+        answer: "סטודיו AZ Designs הוא סטודיו עיצוב פנים מקצועי בניהולו של אבי צוובנר, בוגר לימודי חוץ בטכניון. הסטודיו מתמחה בעיצוב חללים מסחריים (בתי קפה, מאפיות, חנויות) ודירות מגורים, תוך שילוב אסתטיקה גבוהה עם פרקטיקה יום-יומית.",
+    },
+    {
+        question: "באילו אזורים פועל הסטודיו?",
+        answer: "סטודיו AZ Designs פועל בכל רחבי ישראל. פגישות ייעוץ ניתן לקיים גם בזום לנוחיות הלקוח.",
+    },
+    {
+        question: "כיצד מתחילים תהליך עיצוב פנים עם AZ Designs?",
+        answer: "מתחילים בפגישת היכרות חינמית – ללא עלות וללא התחייבות. בפגישה נבין את הצרכים שלכם, נסייר בנכס, ונגדיר יחד את מסגרת הפרויקט. לחצו על 'קבע פגישת ייעוץ' בדף זה.",
+    },
+    {
+        question: "האם הסטודיו עובד גם על עסקים מסחריים?",
+        answer: "כן. לסטודיו AZ Designs ניסיון רחב בעיצוב חללים מסחריים: בתי קפה, מסעדות, מאפיות, חנויות נוחות ועסקים קטנים. ראו דוגמאות בתיק העבודות.",
+    },
+    {
+        question: "האם ייעוץ ראשוני עולה כסף?",
+        answer: "לא. פגישת ההיכרות הראשונה בסטודיו AZ Designs היא ללא עלות וללא התחייבות כלשהי.",
+    },
+];
+
+const homeFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": homeFaqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer,
+        },
+    })),
+};
+
 export const metadata: Metadata = {
   title: 'סטודיו AZ Designs - עיצוב פנים מקצועי לחללים מסחריים ומגורים',
   description: 'סטודיו AZ Designs מתמחה בעיצוב פנים לחללים מסחריים, בתי קפה ודירות מגורים. בוגר לימודי חוץ בטכניון. הפוך את החלל שלך למקום ייחודי – ייעוץ חינם.',
@@ -10,6 +46,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
+      />
 
       {/* Hero Section */}
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">
@@ -97,6 +137,30 @@ export default function Home() {
             imageSrc="/gallery/vacation-apartment/cover.jpeg"
             href="/portfolio/vacation-apartment"
           />
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 border-t border-[var(--foreground)]/5 bg-[var(--background)]/90">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black text-[var(--accent)] mb-4">שאלות נפוצות</h2>
+            <p className="text-lg text-white/60 font-medium">כל מה שרציתם לדעת על סטודיו AZ Designs</p>
+          </div>
+          <div className="space-y-4">
+            {homeFaqItems.map((item, index) => (
+              <details
+                key={index}
+                className="group bg-white/5 backdrop-blur-sm rounded-2xl border-2 border-white/10 hover:border-[var(--accent)] transition-all"
+              >
+                <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-black text-lg text-white text-right">
+                  <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent)]/20 text-[var(--accent)] font-black shrink-0 group-open:bg-[var(--accent)] group-open:text-white transition-all">+</span>
+                  <span className="flex-1 mr-4">{item.question}</span>
+                </summary>
+                <p className="px-6 pb-6 text-white/70 leading-relaxed font-medium text-right">{item.answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 

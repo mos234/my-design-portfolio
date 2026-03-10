@@ -1,6 +1,42 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+const aboutFaqItems = [
+    {
+        question: "מה הניסיון של אבי צוובנר בעיצוב פנים?",
+        answer: "אבי צוובנר צבר ניסיון עשיר של שנים רבות בתעשיית האירועים וההפקה – ניהול פרויקטים מורכבים, עבודה מול לקוחות ויצירת חללים מרשימים. לאחר מכן עבר להתמחות בעיצוב פנים ומנהל את סטודיו AZ Designs.",
+    },
+    {
+        question: "מה ההכשרה המקצועית של אבי צוובנר?",
+        answer: "אבי צוובנר הוא בוגר לימודי חוץ בעיצוב פנים בטכניון – קמפוס עזריאלי. זוהי הכשרה אקדמית מקיפה המקנה ידע מעמיק בתכנון חללים, תאורה, חומרים ושפה עיצובית.",
+    },
+    {
+        question: "מה מייחד את סטודיו AZ Designs מסטודיואים אחרים?",
+        answer: "השילוב הייחודי של ניסיון בהפקת אירועים ועיצוב פנים מביא נקודת מבט רעננה: הבנה עמוקה של אופן בו אנשים חיים ומשתמשים בחללים, לצד יכולת תכנון טכנית מקיפה. כל פרויקט מנוהל אישית על ידי אבי מתחילתו ועד סופו.",
+    },
+    {
+        question: "האם הסטודיו מתאים גם ללקוחות פרטיים?",
+        answer: "בהחלט. סטודיו AZ Designs עובד הן עם לקוחות פרטיים (דירות מגורים, מרפסות, דירות נופש) והן עם עסקים (בתי קפה, מסעדות, מאפיות, חנויות). כל פרויקט מקבל יחס אישי ומקצועי.",
+    },
+    {
+        question: "האם אפשר לראות עבודות קודמות לפני שמתחילים?",
+        answer: "כן. תיק העבודות של סטודיו AZ Designs כולל פרויקטים מגוונים – דירת מגורים, בית קפה בוטיק, מאפייה, מעדניה, מרפסת ודירת נופש. ניתן לצפות בגלריה המלאה בעמוד 'תיק עבודות'.",
+    },
+];
+
+const aboutFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": aboutFaqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer,
+        },
+    })),
+};
+
 export const metadata: Metadata = {
     title: 'סטודיו AZ Designs - עיצוב פנים מקצועי עם אבי צוובנר',
     description: 'הכירו את אבי צוובנר – בוגר לימודי עיצוב פנים בטכניון, מומחה בעיצוב חללים מסחריים ובתים פרטיים, עם ניסיון עשיר בהפקות ואירועים.',
@@ -9,6 +45,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
     return (
         <div className="min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)] flex flex-col justify-center py-20 px-4">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutFaqSchema) }}
+            />
             <div className="max-w-4xl mx-auto space-y-16">
 
                 {/* Header */}
@@ -80,6 +120,29 @@ export default function AboutPage() {
                         </ul>
                     </div>
                 </div>
+
+                {/* FAQ Section */}
+                <div className="mt-8">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-black text-[var(--accent)] mb-4">שאלות נפוצות</h2>
+                        <p className="text-lg text-[var(--foreground)]/60 font-medium">על הסטודיו ועל אבי צוובנר</p>
+                    </div>
+                    <div className="space-y-4">
+                        {aboutFaqItems.map((item, index) => (
+                            <details
+                                key={index}
+                                className="group bg-white rounded-2xl border-2 border-[var(--foreground)]/5 hover:border-[var(--accent)] transition-all shadow-sm"
+                            >
+                                <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-black text-lg text-[var(--foreground)] text-right">
+                                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent)]/10 text-[var(--accent)] font-black shrink-0 group-open:bg-[var(--accent)] group-open:text-white transition-all">+</span>
+                                    <span className="flex-1 mr-4">{item.question}</span>
+                                </summary>
+                                <p className="px-6 pb-6 text-[var(--foreground)]/75 leading-relaxed font-medium text-right">{item.answer}</p>
+                            </details>
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </div>
     );

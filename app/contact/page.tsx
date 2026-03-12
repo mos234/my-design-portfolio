@@ -59,7 +59,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="font-black text-2xl mb-1 text-[var(--accent)]">אימייל</h3>
-                                <a href="mailto:avi.zvebv@gmail.com" className="block text-xl font-bold text-white hover:text-[var(--accent)] transition-colors">avi.zvebv@gmail.com</a>
+                                <a href="mailto:avi.zvebv@gmail.com?subject=%D7%A4%D7%A0%D7%99%D7%99%D7%94%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20azdesigns.co.il" className="block text-xl font-bold text-white hover:text-[var(--accent)] transition-colors">avi.zvebv@gmail.com</a>
                             </div>
                         </div>
 

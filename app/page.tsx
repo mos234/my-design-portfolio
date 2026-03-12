@@ -25,6 +25,39 @@ const homeFaqItems = [
     },
 ];
 
+const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "InteriorDesigner",
+    "name": "סטודיו AZ Designs",
+    "image": "https://azdesigns.co.il/gallery/residence/cover.jpeg",
+    "url": "https://azdesigns.co.il",
+    "telephone": "050-467-3332",
+    "email": "avi.zvebv@gmail.com",
+    "priceRange": "$$",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "ירושלים",
+        "addressCountry": "IL"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 31.7683,
+        "longitude": 35.2137
+    },
+    "areaServed": {
+        "@type": "City",
+        "name": "ירושלים"
+    },
+    "founder": {
+        "@type": "Person",
+        "name": "אבי צוובנר"
+    },
+    "description": "סטודיו AZ Designs מתמחה בעיצוב פנים לחללים מסחריים ומגורים בירושלים. בוגר לימודי חוץ בטכניון. ייעוץ ראשוני ללא עלות.",
+    "sameAs": [
+        "https://azdesigns.co.il"
+    ]
+};
+
 const homeFaqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -46,6 +79,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}

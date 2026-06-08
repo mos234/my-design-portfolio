@@ -16,6 +16,12 @@ const images = [
     '/gallery/vacation-apartment/1.jpeg',
     '/gallery/vacation-apartment/2.jpeg',
     '/gallery/vacation-apartment/3.jpeg',
+    '/gallery/vacation-apartment/4.jpeg',
+    '/gallery/vacation-apartment/5.jpeg',
+    '/gallery/vacation-apartment/6.jpeg',
+    '/gallery/vacation-apartment/7.jpeg',
+    '/gallery/vacation-apartment/8.jpeg',
+    '/gallery/vacation-apartment/9.jpeg',
 ];
 
 export default function VacationApartmentPage() {

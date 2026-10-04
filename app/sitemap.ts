@@ -38,6 +38,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.7,
     },
+    {
+      url: `${BASE_URL}/portfolio/lake-apartment`,
+      lastModified: new Date(),
+      priority: 0.7,
+    },
     { url: `${BASE_URL}/contact`, lastModified: new Date(), priority: 0.8 },
     {
       url: `${BASE_URL}/privacy-policy`,

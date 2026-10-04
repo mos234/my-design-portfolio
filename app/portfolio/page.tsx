@@ -101,6 +101,14 @@ export default function PortfolioPage() {
                         imageSrc="/gallery/vacation-apartment/cover.jpeg"
                         href="/portfolio/vacation-apartment"
                     />
+
+                    {/* Lake Apartment Project */}
+                    <ProjectCard
+                        title="דירה על האגם"
+                        subtitle="לחץ לצפייה בגלריה"
+                        imageSrc="/gallery/lake-apartment/cover.jpeg"
+                        href="/portfolio/lake-apartment"
+                    />
                 </div>
 
                 {/* FAQ Section */}

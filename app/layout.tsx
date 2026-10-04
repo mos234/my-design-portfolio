@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     description: 'סטודיו AZ Designs לאדריכלות ועיצוב פנים – מתמחים בעיצוב חללים מסחריים, בתי קפה, מאפיות, מעדניות ודירות מגורים. בוגר לימודי חוץ בטכניון.',
   },
   metadataBase: new URL('https://azdesigns.co.il'),
+  alternates: {
+    canonical: './',
+  },
 };
 
 import Image from 'next/image';

@@ -71,8 +71,8 @@ export default function RootLayout({
         <main id="main-content" className="flex-1">
           {children}
         </main>
-        <LegalLinks />
         <SocialButtons />
+        <LegalLinks />
         <CookieConsent />
         <AccessibilityWidget />
       </body>

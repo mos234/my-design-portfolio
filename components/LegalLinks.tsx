@@ -9,7 +9,7 @@ export default function LegalLinks() {
     if (pathname === '/') return null;
 
     return (
-        <footer className="bg-black/80 text-white py-4 px-4 text-center text-sm font-bold">
+        <footer className="bg-[var(--accent)] text-[var(--foreground)] py-4 px-4 text-center text-sm font-bold">
             <nav aria-label="קישורים משפטיים" className="flex justify-center gap-6">
                 <Link href="/accessibility" className="underline-offset-4 hover:underline">הצהרת נגישות</Link>
                 <Link href="/privacy-policy" className="underline-offset-4 hover:underline">מדיניות פרטיות</Link>

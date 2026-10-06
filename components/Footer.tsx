@@ -7,7 +7,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
                     <div>
-                        <h3 className="text-2xl font-black text-primary mb-4">אבי זבנר</h3>
+                        <h3 className="text-2xl font-black text-primary mb-4">אבי צוובנר</h3>
                         <p className="text-text font-medium">
                             עיצוב פנים שמתחיל מדמיון והופך למציאות.
                         </p>
@@ -16,7 +16,7 @@ export default function Footer() {
                     <div>
                         <h4 className="font-black text-text mb-4">פרטי קשר</h4>
                         <ul className="space-y-2 text-lg font-medium text-text">
-                            <li>050-467333</li>
+                            <li>050-467-3332</li>
                             <li>avi.zvebv@gmail.com</li>
                         </ul>
                     </div>

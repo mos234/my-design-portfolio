@@ -220,6 +220,7 @@ export default function Home() {
           </div>
           <div className="text-left text-sm font-bold flex flex-col gap-2 text-[var(--background)]">
             <Link href="/privacy-policy" className="hover:text-[var(--foreground)]">מדיניות פרטיות</Link>
+            <Link href="/accessibility" className="hover:text-[var(--foreground)]">הצהרת נגישות</Link>
           </div>
         </div>
         <p className="text-[var(--background)]/60 text-sm">© 2026 אבי צוובנר - עיצוב פנים. כל הזכויות שמורות.</p>

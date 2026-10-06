@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -9,7 +8,6 @@
   --accent: #98FFD8;
   /* Mint Green */
 
-  --font-rubik: "Rubik", sans-serif;
 }
 
 @theme {
@@ -17,7 +15,7 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
 
-  --font-sans: "Rubik", sans-serif;
+  --font-sans: var(--font-rubik), sans-serif;
 }
 
 body {

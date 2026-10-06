@@ -1,11 +1,16 @@
 import type { Metadata } from 'next';
+import { Rubik } from 'next/font/google';
 import './globals.css';
 // Rebuild trigger: Colors swapped
 import SocialButtons from '../components/SocialButtons';
 import CookieConsent from '../components/CookieConsent';
 import AccessibilityWidget from '../components/AccessibilityWidget';
+import LegalLinks from '../components/LegalLinks';
 
 import Navbar from '../components/Navbar';
+
+// Self-hosted at build time, so visitors' browsers never contact Google
+const rubik = Rubik({ subsets: ['hebrew', 'latin'], variable: '--font-rubik', display: 'swap' });
 
 export const metadata: Metadata = {
   title: {
@@ -41,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" dir="rtl">
+    <html lang="he" dir="rtl" className={rubik.variable}>
       <body className="antialiased min-h-screen flex flex-col relative">
         {/* Skip to main content */}
         <a
@@ -63,9 +68,10 @@ export default function RootLayout({
         </div>
 
         <Navbar />
-        <main id="main-content">
+        <main id="main-content" className="flex-1">
           {children}
         </main>
+        <LegalLinks />
         <SocialButtons />
         <CookieConsent />
         <AccessibilityWidget />

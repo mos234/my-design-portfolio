@@ -31,16 +31,16 @@ export default function CookieConsent() {
     return (
         <div role="region" aria-label="הודעה על קוקיז" className="fixed bottom-0 inset-x-0 z-50 p-4 bg-[var(--foreground)] text-[var(--background)] shadow-2xl">
             <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4 text-center sm:text-right">
-                <p className="text-sm font-medium flex-1 text-[var(--accent)]">
+                <p className="text-sm font-medium flex-1 text-[var(--on-foreground)]">
                     האתר אינו משתמש בקוקיז לפרסום או למעקב. נשמרות רק הגדרות טכניות הנדרשות לתפעול האתר.
                     לפרטים ראו את{' '}
-                    <Link href="/privacy-policy" className="underline font-bold hover:text-[var(--accent)]">
+                    <Link href="/privacy-policy" className="underline font-bold hover:text-[var(--on-foreground)]">
                         מדיניות הפרטיות
                     </Link>.
                 </p>
                 <button
                     onClick={accept}
-                    className="px-6 py-2 bg-[var(--accent)] text-[var(--foreground)] font-bold rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
+                    className="px-6 py-2 bg-[var(--accent)] text-[var(--on-accent-alt)] font-bold rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
                 >
                     הבנתי
                 </button>

@@ -6,6 +6,7 @@ import SocialButtons from '../components/SocialButtons';
 import CookieConsent from '../components/CookieConsent';
 import AccessibilityWidget from '../components/AccessibilityWidget';
 import LegalLinks from '../components/LegalLinks';
+import PaletteSwitcher, { paletteBootScript } from '../components/PaletteSwitcher';
 
 import Navbar from '../components/Navbar';
 
@@ -46,12 +47,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" dir="rtl" className={rubik.variable}>
+    <html lang="he" dir="rtl" className={rubik.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: paletteBootScript }} />
+      </head>
       <body className="antialiased min-h-screen flex flex-col relative">
         {/* Skip to main content */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:right-2 focus:z-[100] focus:bg-[var(--accent)] focus:text-[var(--background)] focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:right-2 focus:z-[100] focus:bg-[var(--accent)] focus:text-[var(--on-accent)] focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold"
         >
           דלג לתוכן הראשי
         </a>
@@ -75,6 +79,7 @@ export default function RootLayout({
         <LegalLinks />
         <CookieConsent />
         <AccessibilityWidget />
+        <PaletteSwitcher />
       </body>
     </html>
   );

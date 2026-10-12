@@ -43,28 +43,28 @@ export default function ContactPage() {
 
                     <div className="space-y-10">
                         <div className="flex items-start gap-6">
-                            <div className="bg-[var(--accent)] text-[var(--foreground)] p-4 rounded-full">
+                            <div className="bg-[var(--accent)] text-[var(--on-accent-alt)] p-4 rounded-full">
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                             </div>
                             <div>
                                 <h3 className="font-black text-2xl mb-1 text-[var(--accent)]">טלפון</h3>
-                                <a href={`tel:+${['972','504','673','332'].join('')}`} className="block text-xl font-bold text-white hover:text-[var(--accent)] transition-colors" dir="ltr">050-467-3332</a>
-                                <p className="text-lg text-white/60 font-medium mt-1">זמין לשיחות והודעות WhatsApp</p>
+                                <a href={`tel:+${['972','504','673','332'].join('')}`} className="block text-xl font-bold text-[var(--on-background)] hover:text-[var(--accent)] transition-colors" dir="ltr">050-467-3332</a>
+                                <p className="text-lg text-[var(--text-note)] font-medium mt-1">זמין לשיחות והודעות WhatsApp</p>
                             </div>
                         </div>
 
                         <div className="flex items-start gap-6">
-                            <div className="bg-[var(--accent)] text-[var(--foreground)] p-4 rounded-full">
+                            <div className="bg-[var(--accent)] text-[var(--on-accent-alt)] p-4 rounded-full">
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                             </div>
                             <div>
                                 <h3 className="font-black text-2xl mb-1 text-[var(--accent)]">אימייל</h3>
-                                <a href="mailto:avi.zvebv@gmail.com?subject=%D7%A4%D7%A0%D7%99%D7%99%D7%94%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20azdesigns.co.il" className="block text-xl font-bold text-white hover:text-[var(--accent)] transition-colors">avi.zvebv@gmail.com</a>
+                                <a href="mailto:avi.zvebv@gmail.com?subject=%D7%A4%D7%A0%D7%99%D7%99%D7%94%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20azdesigns.co.il" className="block text-xl font-bold text-[var(--on-background)] hover:text-[var(--accent)] transition-colors">avi.zvebv@gmail.com</a>
                             </div>
                         </div>
 
                         <div className="flex items-start gap-6">
-                            <div className="bg-[var(--accent)] text-[var(--foreground)] p-4 rounded-full">
+                            <div className="bg-[var(--accent)] text-[var(--on-accent-alt)] p-4 rounded-full">
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                             </div>
                             <div>
@@ -76,7 +76,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Contact Form */}
-                <div className="bg-white p-10 rounded-3xl shadow-xl border border-[var(--foreground)]/5 mt-8 md:mt-0">
+                <div className="bg-[var(--surface)] p-10 rounded-3xl shadow-xl border border-[var(--foreground)]/5 mt-8 md:mt-0">
                     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                         <div>
                             <label htmlFor="name" className="block text-lg font-bold mb-2 text-[var(--accent)]">שם מלא</label>
@@ -86,10 +86,10 @@ export default function ContactPage() {
                                 required
                                 value={name}
                                 onChange={(e) => { setName(e.target.value); setErrors((p) => ({ ...p, name: undefined })); }}
-                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.name ? 'border-red-500' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--accent)]`}
+                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.name ? 'border-[var(--danger)]' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--field-text)]`}
                                 placeholder="ישראל ישראלי"
                             />
-                            {errors.name && <p className="text-red-500 text-sm mt-1 font-medium">{errors.name}</p>}
+                            {errors.name && <p className="text-[var(--danger)] text-sm mt-1 font-medium">{errors.name}</p>}
                         </div>
 
                         <div>
@@ -100,10 +100,10 @@ export default function ContactPage() {
                                 required
                                 value={phone}
                                 onChange={(e) => { setPhone(e.target.value); setErrors((p) => ({ ...p, phone: undefined })); }}
-                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.phone ? 'border-red-500' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--accent)]`}
+                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.phone ? 'border-[var(--danger)]' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--field-text)]`}
                                 placeholder="050-0000000"
                             />
-                            {errors.phone && <p className="text-red-500 text-sm mt-1 font-medium">{errors.phone}</p>}
+                            {errors.phone && <p className="text-[var(--danger)] text-sm mt-1 font-medium">{errors.phone}</p>}
                         </div>
 
                         <div>
@@ -113,12 +113,12 @@ export default function ContactPage() {
                                 rows={4}
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
-                                className="w-full px-5 py-4 rounded-xl border-2 border-[var(--foreground)]/10 focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--accent)]"
+                                className="w-full px-5 py-4 rounded-xl border-2 border-[var(--foreground)]/10 focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--field-text)]"
                                 placeholder="אני מתעניין בעיצוב..."
                             ></textarea>
                         </div>
 
-                        <button type="submit" className="w-full bg-[var(--accent)] text-[var(--background)] font-black text-xl py-5 rounded-xl hover:bg-[var(--foreground)] transition-all transform hover:-translate-y-1 shadow-md">
+                        <button type="submit" className="w-full bg-[var(--accent)] text-[var(--on-accent)] font-black text-xl py-5 rounded-xl hover:bg-[var(--foreground)] transition-all transform hover:-translate-y-1 shadow-md">
                             שלח הודעה
                         </button>
                     </form>

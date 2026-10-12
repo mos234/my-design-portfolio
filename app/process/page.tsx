@@ -104,14 +104,14 @@ export default function ProcessPage() {
                         <div key={step.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
 
                             {/* Number Bubble */}
-                            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[var(--accent)] text-[var(--foreground)] border-4 border-[var(--background)] text-2xl font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg">
+                            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[var(--accent)] text-[var(--on-accent-alt)] border-4 border-[var(--background)] text-2xl font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg">
                                 {step.id}
                             </div>
 
                             {/* Card */}
-                            <div className="w-[calc(100%-5rem)] md:w-[calc(50%-3rem)] bg-white p-8 rounded-2xl border-2 border-[var(--foreground)]/5 hover:border-[var(--accent)] shadow-sm transition-all hover:-translate-y-1">
+                            <div className="w-[calc(100%-5rem)] md:w-[calc(50%-3rem)] bg-[var(--surface)] p-8 rounded-2xl border-2 border-[var(--foreground)]/5 hover:border-[var(--accent)] shadow-sm transition-all hover:-translate-y-1">
                                 <h3 className="font-black text-2xl text-[var(--foreground)] mb-3">{step.title}</h3>
-                                <p className="text-[var(--foreground)]/80 text-lg font-medium leading-relaxed">{step.desc}</p>
+                                <p className="text-[var(--fg-80)] text-lg font-medium leading-relaxed">{step.desc}</p>
                             </div>
 
                         </div>
@@ -122,21 +122,21 @@ export default function ProcessPage() {
                 <div className="mt-28">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl md:text-5xl font-black text-[var(--accent)] mb-4">שאלות נפוצות</h2>
-                        <p className="text-lg text-[var(--foreground)]/70 font-medium">כל מה שרציתם לדעת לפני שמתחילים</p>
+                        <p className="text-lg text-[var(--fg-70)] font-medium">כל מה שרציתם לדעת לפני שמתחילים</p>
                     </div>
                     <div className="space-y-4">
                         {faqItems.map((item, index) => (
                             <details
                                 key={index}
-                                className="group bg-white rounded-2xl border-2 border-[var(--foreground)]/5 hover:border-[var(--accent)] transition-all shadow-sm"
+                                className="group bg-[var(--surface)] rounded-2xl border-2 border-[var(--foreground)]/5 hover:border-[var(--accent)] transition-all shadow-sm"
                             >
                                 <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-black text-lg text-[var(--foreground)] text-right">
-                                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent)]/10 text-[var(--accent)] font-black shrink-0 group-open:bg-[var(--accent)] group-open:text-white transition-all">
+                                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent)]/10 text-[var(--accent)] font-black shrink-0 group-open:bg-[var(--accent)] group-open:text-[var(--on-accent-open)] transition-all">
                                         +
                                     </span>
                                     <span className="flex-1 mr-4">{item.question}</span>
                                 </summary>
-                                <p className="px-6 pb-6 text-[var(--foreground)]/75 leading-relaxed font-medium text-right">
+                                <p className="px-6 pb-6 text-[var(--fg-75)] leading-relaxed font-medium text-right">
                                     {item.answer}
                                 </p>
                             </details>

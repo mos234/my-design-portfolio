@@ -11,8 +11,8 @@ export default function PrivacyPolicy() {
             <div className="max-w-4xl mx-auto">
                 <h1 className="text-4xl md:text-5xl font-black mb-10 pb-4 border-b-4 border-[var(--accent)] inline-block">מדיניות פרטיות</h1>
 
-                <div className="prose prose-xl max-w-none text-[var(--foreground)]/90 space-y-8 font-medium">
-                    <p className="text-lg opacity-70">עדכון אחרון: אוקטובר 2026</p>
+                <div className="prose prose-xl max-w-none text-[var(--fg-90)] space-y-8 font-medium">
+                    <p className="text-lg text-[var(--fg-70)]">עדכון אחרון: אוקטובר 2026</p>
 
                     <p>
                         ברוכים הבאים לאתר של אבי צוובנר – AZ Designs עיצוב פנים (&quot;אנחנו&quot;). אנו מכבדים את הפרטיות שלכם ומחויבים להגן על המידע האישי שאתם משתפים איתנו, בהתאם לחוק הגנת הפרטיות, התשמ&quot;א-1981.
@@ -22,8 +22,8 @@ export default function PrivacyPolicy() {
                         <h2 className="text-2xl font-black mb-3">1. האחראי על המידע</h2>
                         <p>
                             האחראי על המידע הנאסף באתר הוא אבי צוובנר – AZ Designs עיצוב פנים. ניתן לפנות אלינו בכל נושא הקשור לפרטיות באימייל{' '}
-                            <a href="mailto:avi.zvebv@gmail.com" className="text-[var(--accent)] underline hover:text-[var(--foreground)]">avi.zvebv@gmail.com</a>{' '}
-                            או בטלפון <a href="tel:+972504673332" className="text-[var(--accent)] underline hover:text-[var(--foreground)]" dir="ltr">050-467-3332</a>.
+                            <a href="mailto:avi.zvebv@gmail.com" className="text-[var(--accent-text)] underline hover:text-[var(--foreground)]">avi.zvebv@gmail.com</a>{' '}
+                            או בטלפון <a href="tel:+972504673332" className="text-[var(--accent-text)] underline hover:text-[var(--foreground)]" dir="ltr">050-467-3332</a>.
                         </p>
                     </div>
 

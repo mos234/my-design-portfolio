@@ -43,11 +43,11 @@ export default function ProjectGallery({ title, subtitle, images, description }:
                 <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
                     <div className="text-center sm:text-right">
                         <h1 className="text-3xl md:text-5xl font-black text-[var(--foreground)]">{title}</h1>
-                        <p className="text-lg md:text-xl text-[var(--accent)] font-bold mt-2">{subtitle}</p>
+                        <p className="text-lg md:text-xl text-[var(--accent-text)] font-bold mt-2">{subtitle}</p>
                     </div>
                     <Link
                         href="/portfolio"
-                        className="px-6 py-2 bg-[var(--accent)] text-[var(--background)] font-bold rounded-full hover:opacity-90 transition-all shadow-md hover:shadow-lg whitespace-nowrap"
+                        className="px-6 py-2 bg-[var(--accent)] text-[var(--on-accent)] font-bold rounded-full hover:opacity-90 transition-all shadow-md hover:shadow-lg whitespace-nowrap"
                     >
                         &larr; חזרה לתיק העבודות
                     </Link>
@@ -55,7 +55,7 @@ export default function ProjectGallery({ title, subtitle, images, description }:
 
                 {/* Description */}
                 {description && (
-                    <p className="text-lg text-[var(--accent)] leading-relaxed mb-8 text-right">
+                    <p className="text-lg text-[var(--accent-text)] leading-relaxed mb-8 text-right">
                         {description}
                     </p>
                 )}

@@ -11,8 +11,8 @@ export default function AccessibilityStatement() {
             <div className="max-w-4xl mx-auto">
                 <h1 className="text-4xl md:text-5xl font-black mb-10 pb-4 border-b-4 border-[var(--accent)] inline-block">הצהרת נגישות</h1>
 
-                <div className="prose prose-xl max-w-none text-[var(--foreground)]/90 space-y-8 font-medium">
-                    <p className="text-lg opacity-70">עדכון אחרון: אוקטובר 2026</p>
+                <div className="prose prose-xl max-w-none text-[var(--fg-90)] space-y-8 font-medium">
+                    <p className="text-lg text-[var(--fg-70)]">עדכון אחרון: אוקטובר 2026</p>
 
                     <p>
                         אנו ב&quot;אבי צוובנר – AZ Designs עיצוב פנים&quot; רואים חשיבות רבה במתן שירות שוויוני לכלל הלקוחות והגולשים, ובכלל זה לאנשים עם מוגבלות, ופועלים לשיפור הנגישות באתר האינטרנט שלנו.
@@ -59,8 +59,8 @@ export default function AccessibilityStatement() {
                         </p>
                         <ul className="list-none space-y-2 mt-3">
                             <li><strong>רכז הנגישות:</strong> אבי צוובנר</li>
-                            <li><strong>טלפון:</strong> <a href="tel:+972504673332" className="text-[var(--accent)] underline hover:text-[var(--foreground)]" dir="ltr">050-467-3332</a></li>
-                            <li><strong>אימייל:</strong> <a href="mailto:avi.zvebv@gmail.com" className="text-[var(--accent)] underline hover:text-[var(--foreground)]">avi.zvebv@gmail.com</a></li>
+                            <li><strong>טלפון:</strong> <a href="tel:+972504673332" className="text-[var(--accent-text)] underline hover:text-[var(--foreground)]" dir="ltr">050-467-3332</a></li>
+                            <li><strong>אימייל:</strong> <a href="mailto:avi.zvebv@gmail.com" className="text-[var(--accent-text)] underline hover:text-[var(--foreground)]">avi.zvebv@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>

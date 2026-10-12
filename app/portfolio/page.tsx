@@ -115,19 +115,19 @@ export default function PortfolioPage() {
                 <div className="mt-24 max-w-4xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl md:text-5xl font-black text-[var(--accent)] mb-4">שאלות נפוצות</h2>
-                        <p className="text-lg text-white/60 font-medium">על הפרויקטים ועל הסטודיו</p>
+                        <p className="text-lg text-[var(--text-note)] font-medium">על הפרויקטים ועל הסטודיו</p>
                     </div>
                     <div className="space-y-4">
                         {portfolioFaqItems.map((item, index) => (
                             <details
                                 key={index}
-                                className="group bg-white/5 backdrop-blur-sm rounded-2xl border-2 border-white/10 hover:border-[var(--accent)] transition-all"
+                                className="group bg-[var(--on-background)]/5 backdrop-blur-sm rounded-2xl border-2 border-[var(--on-background)]/10 hover:border-[var(--accent)] transition-all"
                             >
-                                <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-black text-lg text-white text-right">
-                                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent)]/20 text-[var(--accent)] font-black shrink-0 group-open:bg-[var(--accent)] group-open:text-white transition-all">+</span>
+                                <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-black text-lg text-[var(--on-background)] text-right">
+                                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent)]/20 text-[var(--accent)] font-black shrink-0 group-open:bg-[var(--accent)] group-open:text-[var(--on-accent-open)] transition-all">+</span>
                                     <span className="flex-1 mr-4">{item.question}</span>
                                 </summary>
-                                <p className="px-6 pb-6 text-white/70 leading-relaxed font-medium text-right">{item.answer}</p>
+                                <p className="px-6 pb-6 text-[var(--text-body)] leading-relaxed font-medium text-right">{item.answer}</p>
                             </details>
                         ))}
                     </div>

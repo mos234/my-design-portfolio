@@ -93,7 +93,7 @@ export default function Home() {
         <div className="max-w-full animate-fade-in-up space-y-8">
 
           <h1 className="text-[9vw] md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--accent)] leading-snug drop-shadow-lg px-2 scale-y-[1.2] md:scale-y-100"
-            style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
+            style={{ textShadow: 'var(--hero-shadow)' }}>
             מעצבים לך את הדמיון
           </h1>
 
@@ -104,10 +104,10 @@ export default function Home() {
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/process" className="px-10 py-5 bg-[var(--accent)] text-[var(--background)] text-lg font-bold rounded-full hover:bg-[var(--foreground)] transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
+            <Link href="/process" className="px-10 py-5 bg-[var(--accent)] text-[var(--on-accent)] text-lg font-bold rounded-full hover:bg-[var(--foreground)] transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
               איך זה עובד?
             </Link>
-            <Link href="/contact" className="px-10 py-5 border-[2px] border-[var(--accent)] text-[var(--accent)] text-lg font-bold rounded-full hover:bg-[var(--accent)] hover:text-[var(--background)] transition-all duration-300">
+            <Link href="/contact" className="px-10 py-5 border-[2px] border-[var(--accent)] text-[var(--accent)] text-lg font-bold rounded-full hover:bg-[var(--accent)] hover:text-[var(--on-accent)] transition-all duration-300">
               קבע פגישת ייעוץ
             </Link>
           </div>
@@ -115,23 +115,23 @@ export default function Home() {
       </main>
 
       {/* Intro Section */}
-      <section className="py-20 px-4 border-t border-[var(--foreground)]/5 backdrop-blur-sm bg-[var(--background)]/80">
+      <section className="py-20 px-4 border-t border-[var(--foreground)]/5 backdrop-blur-sm bg-[var(--veil-80)]">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-black text-[var(--accent)]">נעים להכיר, אני אבי</h2>
-          <p className="text-xl leading-relaxed font-medium text-white/80">
+          <p className="text-xl leading-relaxed font-medium text-[var(--text-lead)]">
             "אחרי שנים רבות כבעלים של חברת הפקות ואירועים, וביצוע אין סוף אירועים, הגיע הזמן לעיסוק שמוסיף לנפש וליצירה."
           </p>
-          <p className="text-lg leading-relaxed text-white/80">
+          <p className="text-lg leading-relaxed text-[var(--text-lead)]">
             פניתי לתחום עיצוב הפנים כלימודי חוץ של הטכניון בעזריאלי, הקמתי סטודיו ויצאנו לדרך. הסטודיו מתמחה בעיצוב חללים מסחריים, מאפיות, חנויות נוחות ודירות מגורים.
           </p>
-          <Link href="/about" className="inline-block px-8 py-3 mt-4 text-[var(--accent)] font-black text-lg hover:underline underline-offset-4">
+          <Link href="/about" className="inline-block px-8 py-3 mt-4 text-[var(--accent-text)] font-black text-lg hover:underline underline-offset-4">
             קרא עוד עלי &larr;
           </Link>
         </div>
       </section>
 
       {/* Featured Projects Preview */}
-      <section className="py-20 px-4 bg-white/50 backdrop-blur-md">
+      <section className="py-20 px-4 bg-[var(--section-tint)] backdrop-blur-md">
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-black text-[var(--foreground)] mb-4">פרויקטים נבחרים</h2>
           <p className="text-xl text-[var(--accent)] font-bold">הצצה לעבודות האחרונות שלנו</p>
@@ -184,23 +184,23 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 border-t border-[var(--foreground)]/5 bg-[var(--background)]/90">
+      <section className="py-20 px-4 border-t border-[var(--foreground)]/5 bg-[var(--veil-90)]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-black text-[var(--accent)] mb-4">שאלות נפוצות</h2>
-            <p className="text-lg text-white/60 font-medium">כל מה שרציתם לדעת על סטודיו AZ Designs</p>
+            <p className="text-lg text-[var(--text-note)] font-medium">כל מה שרציתם לדעת על סטודיו AZ Designs</p>
           </div>
           <div className="space-y-4">
             {homeFaqItems.map((item, index) => (
               <details
                 key={index}
-                className="group bg-white/5 backdrop-blur-sm rounded-2xl border-2 border-white/10 hover:border-[var(--accent)] transition-all"
+                className="group bg-[var(--on-background)]/5 backdrop-blur-sm rounded-2xl border-2 border-[var(--on-background)]/10 hover:border-[var(--accent)] transition-all"
               >
-                <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-black text-lg text-white text-right">
-                  <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent)]/20 text-[var(--accent)] font-black shrink-0 group-open:bg-[var(--accent)] group-open:text-white transition-all">+</span>
+                <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-black text-lg text-[var(--on-background)] text-right">
+                  <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent)]/20 text-[var(--accent)] font-black shrink-0 group-open:bg-[var(--accent)] group-open:text-[var(--on-accent-open)] transition-all">+</span>
                   <span className="flex-1 mr-4">{item.question}</span>
                 </summary>
-                <p className="px-6 pb-6 text-white/70 leading-relaxed font-medium text-right">{item.answer}</p>
+                <p className="px-6 pb-6 text-[var(--text-body)] leading-relaxed font-medium text-right">{item.answer}</p>
               </details>
             ))}
           </div>
@@ -208,22 +208,22 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-[var(--foreground)]/10 text-center bg-[var(--accent)] text-[var(--background)]">
+      <footer className="py-12 border-t border-[var(--foreground)]/10 text-center bg-[var(--accent)] text-[var(--on-accent)]">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 items-center mb-8">
           <div className="text-right">
-            <h3 className="font-black text-xl text-[var(--background)] mb-2">אבי צוובנר</h3>
+            <h3 className="font-black text-xl text-[var(--on-accent)] mb-2">אבי צוובנר</h3>
             <p className="text-sm opacity-90">עיצוב פנים שמתחיל מדמיון.</p>
           </div>
-          <div className="flex flex-col gap-2 font-bold text-[var(--background)]">
-            <a href="tel:+972504673332" className="hover:text-[var(--foreground)]">050-467-3332</a>
-            <a href="mailto:avi.zvebv@gmail.com" className="hover:text-[var(--foreground)]">avi.zvebv@gmail.com</a>
+          <div className="flex flex-col gap-2 font-bold text-[var(--on-accent)]">
+            <a href="tel:+972504673332" className="hover:text-[var(--on-accent-alt)]">050-467-3332</a>
+            <a href="mailto:avi.zvebv@gmail.com" className="hover:text-[var(--on-accent-alt)]">avi.zvebv@gmail.com</a>
           </div>
-          <div className="text-left text-sm font-bold flex flex-col gap-2 text-[var(--background)]">
-            <Link href="/privacy-policy" className="hover:text-[var(--foreground)]">מדיניות פרטיות</Link>
-            <Link href="/accessibility" className="hover:text-[var(--foreground)]">הצהרת נגישות</Link>
+          <div className="text-left text-sm font-bold flex flex-col gap-2 text-[var(--on-accent)]">
+            <Link href="/privacy-policy" className="hover:text-[var(--on-accent-alt)]">מדיניות פרטיות</Link>
+            <Link href="/accessibility" className="hover:text-[var(--on-accent-alt)]">הצהרת נגישות</Link>
           </div>
         </div>
-        <p className="text-[var(--background)]/60 text-sm">© 2026 אבי צוובנר - עיצוב פנים. כל הזכויות שמורות.</p>
+        <p className="text-[var(--on-accent-muted)] text-sm">© 2026 אבי צוובנר - עיצוב פנים. כל הזכויות שמורות.</p>
       </footer>
     </div>
   );

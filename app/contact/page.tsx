@@ -73,7 +73,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="font-black text-2xl mb-1 text-[var(--accent)]">שעות פעילות</h3>
-                                <p className="text-xl font-bold text-[var(--accent)]">זמינות אונליין 24/7</p>
+                                <p className="text-xl font-bold text-[var(--accent)]">זמינות אונליין</p>
                             </div>
                         </div>
                     </div>

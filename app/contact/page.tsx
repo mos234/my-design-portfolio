@@ -1,12 +1,14 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 
 export default function ContactPage() {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
     const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+    const nameRef = useRef<HTMLInputElement>(null);
+    const phoneRef = useRef<HTMLInputElement>(null);
 
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
@@ -17,6 +19,8 @@ export default function ContactPage() {
 
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
+            // Move focus to the first field that needs fixing
+            (newErrors.name ? nameRef : phoneRef).current?.focus();
             return;
         }
 
@@ -83,13 +87,16 @@ export default function ContactPage() {
                             <input
                                 type="text"
                                 id="name"
+                                ref={nameRef}
                                 required
+                                aria-invalid={!!errors.name}
+                                aria-describedby={errors.name ? 'name-error' : undefined}
                                 value={name}
                                 onChange={(e) => { setName(e.target.value); setErrors((p) => ({ ...p, name: undefined })); }}
-                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.name ? 'border-[var(--danger)]' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--field-text)]`}
+                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.name ? 'border-[var(--danger)]' : 'border-[var(--field-border)]'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--field-text)]`}
                                 placeholder="ישראל ישראלי"
                             />
-                            {errors.name && <p className="text-[var(--danger)] text-sm mt-1 font-medium">{errors.name}</p>}
+                            {errors.name && <p id="name-error" role="alert" className="text-[var(--danger)] text-sm mt-1 font-medium">{errors.name}</p>}
                         </div>
 
                         <div>
@@ -97,13 +104,16 @@ export default function ContactPage() {
                             <input
                                 type="tel"
                                 id="phone"
+                                ref={phoneRef}
                                 required
+                                aria-invalid={!!errors.phone}
+                                aria-describedby={errors.phone ? 'phone-error' : undefined}
                                 value={phone}
                                 onChange={(e) => { setPhone(e.target.value); setErrors((p) => ({ ...p, phone: undefined })); }}
-                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.phone ? 'border-[var(--danger)]' : 'border-[var(--foreground)]/10'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--field-text)]`}
+                                className={`w-full px-5 py-4 rounded-xl border-2 ${errors.phone ? 'border-[var(--danger)]' : 'border-[var(--field-border)]'} focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--field-text)]`}
                                 placeholder="050-0000000"
                             />
-                            {errors.phone && <p className="text-[var(--danger)] text-sm mt-1 font-medium">{errors.phone}</p>}
+                            {errors.phone && <p id="phone-error" role="alert" className="text-[var(--danger)] text-sm mt-1 font-medium">{errors.phone}</p>}
                         </div>
 
                         <div>
@@ -113,7 +123,7 @@ export default function ContactPage() {
                                 rows={4}
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
-                                className="w-full px-5 py-4 rounded-xl border-2 border-[var(--foreground)]/10 focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--field-text)]"
+                                className="w-full px-5 py-4 rounded-xl border-2 border-[var(--field-border)] focus:border-[var(--accent)] outline-none transition-all font-medium bg-[var(--background)] text-[var(--field-text)]"
                                 placeholder="אני מתעניין בעיצוב..."
                             ></textarea>
                         </div>

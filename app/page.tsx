@@ -89,7 +89,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">
+      <section className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">
         <div className="max-w-full animate-fade-in-up space-y-8">
 
           <h1 className="text-[9vw] md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--accent)] leading-snug drop-shadow-lg px-2 scale-y-[1.2] md:scale-y-100"
@@ -112,7 +112,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </main>
+      </section>
 
       {/* Intro Section */}
       <section className="py-20 px-4 border-t border-[var(--foreground)]/5 backdrop-blur-sm bg-[var(--veil-80)]">

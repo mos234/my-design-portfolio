@@ -27,6 +27,7 @@
   --nav-link-hover: var(--on-background);
   --accent-text: var(--accent);        /* small accent-colored text and links */
   --field-text: var(--accent);         /* text typed into form fields */
+  --field-border: #8C7A68;             /* form field edge, ≥3:1 on card and field */
   --fg-90: color-mix(in oklab, var(--foreground) 90%, transparent);
   --fg-80: color-mix(in oklab, var(--foreground) 80%, transparent);
   --fg-75: color-mix(in oklab, var(--foreground) 75%, transparent);
@@ -87,6 +88,7 @@ html.a11y-high-contrast {
   --nav-link-hover: #ffffff !important;
   --accent-text: #ffff00 !important;
   --field-text: #ffffff !important;
+  --field-border: #ffffff !important;
   --fg-90: #ffffff !important;
   --fg-80: #ffffff !important;
   --fg-75: #ffffff !important;

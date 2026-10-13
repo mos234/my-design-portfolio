@@ -50,7 +50,7 @@ Supporting background: years running an events and production company (managing 
 - Name: AZ Designs / אבי צוובנר – עיצוב פנים.
 - Slogan: "מעצבים לכם את הדמיון" (We design your imagination).
 - The owner specified bold, heavy "print-style" type, currently Rubik in heavy weights.
-- Brand colors the owner specified: earth/terracotta `#A26A42`, mint green `#98FFD8`, bronze `#804A00`. These colors do not meet AA contrast as currently combined. Accessible alternatives are under review with the owner (October 2026), and no replacement has been chosen yet.
+- Brand colors: in October 2026 the owner chose the "Espresso & Mint" palette (espresso `#2B1D14`, cream `#F3E9DC`, mint `#98FFD8`), which meets WCAG AA. It replaced the original earth `#A26A42` / bronze `#804A00` / mint combination, which failed contrast. Mint stays the signature accent.
 - Logo files: `public/logo-new.png`, `public/logo-new1.png`, `public/logo.jpeg`. Portrait: `public/profile.jpeg`.
 
 ## Evidence on Hand

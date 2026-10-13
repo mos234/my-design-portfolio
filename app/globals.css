@@ -1,111 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #A26A42;
-  /* Earth */
-  --foreground: #804A00;
-  /* Bronze */
-  --accent: #98FFD8;
-  /* Mint Green */
+  /* Brand palette "Espresso & Mint", chosen by the owner October 2026. Meets WCAG AA. */
+  --background: #2B1D14;  /* Espresso */
+  --foreground: #F3E9DC;  /* Cream */
+  --accent: #98FFD8;      /* Mint */
 
-  /* Role tokens. Defaults reproduce the current look exactly;
-     the palette classes below redefine them. */
-  --on-background: #ffffff;          /* light text on page sections */
-  --text-lead: rgb(255 255 255 / 0.8);
-  --text-body: rgb(255 255 255 / 0.7);
-  --text-note: rgb(255 255 255 / 0.6);
-  --surface: #ffffff;                /* cards and form panel */
-  --surface-muted: #F5F3EE;          /* about-page intro card */
-  --section-tint: rgb(255 255 255 / 0.5);
-  --on-accent: var(--background);    /* text on accent buttons */
-  --on-accent-alt: var(--foreground);/* text on accent badges, legal bar */
-  --on-accent-open: #ffffff;         /* open FAQ marker */
-  --on-accent-muted: color-mix(in srgb, var(--background) 60%, transparent);
-  --on-foreground: var(--accent);    /* text on the cookie banner */
-  --danger: #ef4444;
+  /* Role tokens */
+  --on-background: var(--foreground);  /* text on page sections */
+  --text-lead: var(--foreground);
+  --text-body: #E0D3C2;
+  --text-note: #CDBEAA;
+  --surface: #3A2A1F;                  /* cards and form panel */
+  --surface-muted: #3A2A1F;            /* about-page intro card */
+  --section-tint: rgb(43 29 20 / 0.92);
+  --on-accent: #2B1D14;                /* text on mint buttons, badges, footer */
+  --on-accent-alt: #2B1D14;
+  --on-accent-open: #2B1D14;
+  --on-accent-muted: #2B1D14;
+  --on-foreground: #2B1D14;            /* text on the cookie banner */
+  --danger: #FF9C90;
   --hero-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   --veil-80: color-mix(in oklab, var(--background) 80%, transparent);  /* nav, intro over photo */
   --veil-90: color-mix(in oklab, var(--background) 90%, transparent);  /* FAQ over photo */
   --nav-link: var(--accent);
   --nav-link-hover: var(--on-background);
-  --accent-text: var(--accent);      /* small accent-colored text and links */
-  --field-text: var(--accent);       /* text typed into form fields */
+  --accent-text: var(--accent);        /* small accent-colored text and links */
+  --field-text: var(--accent);         /* text typed into form fields */
   --fg-90: color-mix(in oklab, var(--foreground) 90%, transparent);
   --fg-80: color-mix(in oklab, var(--foreground) 80%, transparent);
   --fg-75: color-mix(in oklab, var(--foreground) 75%, transparent);
   --fg-70: color-mix(in oklab, var(--foreground) 70%, transparent);
-}
-
-/* Original brand colors, used only where they meet AA:
-   mint stays for large headings, buttons and accents; small text turns white;
-   cards become bronze so mint and white read on them. */
-html.palette-3 {
-  --background: #9C6440;  /* Earth, a shade deeper */
-  --foreground: #FFFFFF;
-  --accent: #98FFD8;      /* Mint */
-  --on-background: #FFFFFF;
-  --text-lead: #FFFFFF;
-  --text-body: #FFFFFF;
-  --text-note: #FFFFFF;
-  --surface: #804A00;     /* Bronze */
-  --surface-muted: #804A00;
-  --section-tint: rgb(128 74 0 / 0.95);
-  --on-accent: #804A00;
-  --on-accent-alt: #804A00;
-  --on-accent-open: #804A00;
-  --on-accent-muted: #804A00;
-  --on-foreground: #804A00;
-  --danger: #FFD2CC;
-  --veil-80: rgb(156 100 64 / 0.96);
-  --veil-90: rgb(156 100 64 / 0.96);
-  --nav-link: #FFFFFF;
-  --nav-link-hover: #98FFD8;
-  --accent-text: #FFFFFF;
-  --field-text: #FFFFFF;
-  --fg-90: #FFFFFF;
-  --fg-80: #FFFFFF;
-  --fg-75: #FFFFFF;
-  --fg-70: #FFFFFF;
-}
-
-/* --- Palette preview (temporary, preview branch only) --- */
-html.palette-1 {
-  --background: #2B1D14;  /* Espresso */
-  --foreground: #F3E9DC;  /* Cream */
-  --accent: #98FFD8;      /* Mint */
-  --on-background: var(--foreground);
-  --text-lead: var(--foreground);
-  --text-body: #E0D3C2;
-  --text-note: #CDBEAA;
-  --surface: #3A2A1F;
-  --surface-muted: #3A2A1F;
-  --section-tint: rgb(43 29 20 / 0.92);
-  --on-accent: #2B1D14;
-  --on-accent-alt: #2B1D14;
-  --on-accent-open: #2B1D14;
-  --on-accent-muted: #2B1D14;
-  --on-foreground: #2B1D14;
-  --danger: #FF9C90;
-}
-
-html.palette-2 {
-  --background: #FAF6F0;  /* Cream */
-  --foreground: #3F2512;  /* Deep brown */
-  --accent: #1F5F55;      /* Deep green */
-  --on-background: var(--foreground);
-  --text-lead: var(--foreground);
-  --text-body: #4F3A2A;
-  --text-note: #5E4A3A;
-  --surface: #ffffff;
-  --surface-muted: #ffffff;
-  --section-tint: rgb(250 246 240 / 0.94);
-  --on-accent: #FAF6F0;
-  --on-accent-alt: #FAF6F0;
-  --on-accent-open: #FAF6F0;
-  --on-accent-muted: #FAF6F0;
-  --on-foreground: #FAF6F0;
-  --danger: #B42318;
-  --hero-shadow: 0 1px 14px rgba(250, 246, 240, 0.95), 0 0 2px rgba(250, 246, 240, 0.9);
 }
 
 @theme {

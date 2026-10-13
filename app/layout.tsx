@@ -6,7 +6,6 @@ import SocialButtons from '../components/SocialButtons';
 import CookieConsent from '../components/CookieConsent';
 import AccessibilityWidget from '../components/AccessibilityWidget';
 import LegalLinks from '../components/LegalLinks';
-import PaletteSwitcher, { paletteBootScript } from '../components/PaletteSwitcher';
 
 import Navbar from '../components/Navbar';
 
@@ -47,10 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" dir="rtl" className={rubik.variable} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: paletteBootScript }} />
-      </head>
+    <html lang="he" dir="rtl" className={rubik.variable}>
       <body className="antialiased min-h-screen flex flex-col relative">
         {/* Skip to main content */}
         <a
@@ -79,7 +75,6 @@ export default function RootLayout({
         <LegalLinks />
         <CookieConsent />
         <AccessibilityWidget />
-        <PaletteSwitcher />
       </body>
     </html>
   );

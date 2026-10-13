@@ -101,7 +101,7 @@ export default function AccessibilityWidget() {
                 onClick={() => setIsOpen(!isOpen)}
                 aria-expanded={isOpen}
                 aria-controls="a11y-menu"
-                className="w-14 h-14 bg-white hover:bg-[var(--accent)] text-[#2B2B2B] hover:text-black rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[var(--accent)] flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-14 h-14 bg-white hover:bg-[var(--accent)] text-[#2B2B2B] hover:text-black rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[var(--accent)] flex items-center justify-center transition-all duration-300 motion-safe:hover:scale-110"
                 aria-label="תפריט נגישות"
                 title="אפשרויות נגישות"
             >

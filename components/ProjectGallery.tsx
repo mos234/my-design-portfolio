@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef, type TouchEvent } from 'react';
 
 interface ProjectGalleryProps {
     title: string;
@@ -13,6 +13,7 @@ interface ProjectGalleryProps {
 
 export default function ProjectGallery({ title, subtitle, images, description }: ProjectGalleryProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const touchStartX = useRef<number | null>(null);
 
     const goNext = useCallback(() => {
         setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -33,6 +34,20 @@ export default function ProjectGallery({ title, subtitle, images, description }:
         document.addEventListener('keydown', handleKeyDown);
         return () => document.removeEventListener('keydown', handleKeyDown);
     }, [goNext, goPrev]);
+
+    // Swipe on touch screens. In RTL the next image sits to the left, so a swipe to the right shows it.
+    function handleTouchStart(e: TouchEvent) {
+        touchStartX.current = e.touches[0].clientX;
+    }
+
+    function handleTouchEnd(e: TouchEvent) {
+        if (touchStartX.current === null) return;
+        const dx = e.changedTouches[0].clientX - touchStartX.current;
+        touchStartX.current = null;
+        if (Math.abs(dx) < 50) return;
+        if (dx > 0) goNext();
+        else goPrev();
+    }
 
     if (images.length === 0) return null;
 
@@ -61,7 +76,11 @@ export default function ProjectGallery({ title, subtitle, images, description }:
                 )}
 
                 {/* Main Image Viewer */}
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-black/5 mb-6">
+                <div
+                    className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-black/5 mb-6 touch-pan-y"
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                >
                     <Image
                         src={images[currentIndex]}
                         alt={`עיצוב פנים – ${title} ${subtitle} – תמונה ${currentIndex + 1} מתוך ${images.length}`}
@@ -75,22 +94,22 @@ export default function ProjectGallery({ title, subtitle, images, description }:
                     {/* Navigation Arrows */}
                     {images.length > 1 && (
                         <>
-                            {/* Right Arrow (visually right in RTL) */}
+                            {/* Next: on the left in RTL, pointing left */}
                             <button
                                 onClick={goNext}
-                                className="absolute left-3 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center text-2xl md:text-3xl font-bold transition-all backdrop-blur-sm"
+                                className="absolute left-3 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors backdrop-blur-sm"
                                 aria-label="תמונה הבאה"
                             >
-                                &gt;
+                                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 6l-6 6 6 6" /></svg>
                             </button>
 
-                            {/* Left Arrow (visually left in RTL) */}
+                            {/* Previous: on the right in RTL, pointing right */}
                             <button
                                 onClick={goPrev}
-                                className="absolute right-3 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center text-2xl md:text-3xl font-bold transition-all backdrop-blur-sm"
+                                className="absolute right-3 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors backdrop-blur-sm"
                                 aria-label="תמונה קודמת"
                             >
-                                &lt;
+                                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6" /></svg>
                             </button>
                         </>
                     )}
@@ -98,7 +117,7 @@ export default function ProjectGallery({ title, subtitle, images, description }:
 
                 {/* Counter */}
                 <div className="text-center">
-                    <span className="inline-block bg-[var(--foreground)]/10 text-[var(--foreground)] font-bold px-5 py-2 rounded-full text-lg">
+                    <span aria-live="polite" className="inline-block bg-[var(--foreground)]/10 text-[var(--foreground)] font-bold px-5 py-2 rounded-full text-lg">
                         {currentIndex + 1} / {images.length}
                     </span>
                 </div>
@@ -110,6 +129,7 @@ export default function ProjectGallery({ title, subtitle, images, description }:
                             <button
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
+                                aria-current={idx === currentIndex ? 'true' : undefined}
                                 className={`rounded-lg overflow-hidden flex-shrink-0 transition-all duration-200 ${
                                     idx === currentIndex
                                         ? 'ring-3 ring-[var(--accent)] shadow-lg scale-105'

@@ -128,7 +128,7 @@ export default function ContactPage() {
                             ></textarea>
                         </div>
 
-                        <button type="submit" className="w-full bg-[var(--accent)] text-[var(--on-accent)] font-black text-xl py-5 rounded-xl hover:bg-[var(--foreground)] transition-all transform hover:-translate-y-1 shadow-md">
+                        <button type="submit" className="w-full bg-[var(--accent)] text-[var(--on-accent)] font-black text-xl py-5 rounded-xl hover:bg-[var(--foreground)] transition-all transform motion-safe:hover:-translate-y-1 shadow-md">
                             שלח הודעה
                         </button>
                     </form>

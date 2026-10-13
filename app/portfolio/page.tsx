@@ -60,6 +60,7 @@ export default function PortfolioPage() {
                         subtitle="לחץ לצפייה בגלריה"
                         imageSrc="/gallery/residence/cover.jpeg"
                         href="/portfolio/residence"
+                        priority
                     />
 
                     {/* Bakery Project */}

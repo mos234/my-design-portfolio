@@ -18,7 +18,7 @@ export default function SocialButtons() {
                 href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 sm:w-12 sm:h-12 bg-[#25D366] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                className="w-11 h-11 sm:w-12 sm:h-12 bg-[#25D366] text-white rounded-full shadow-lg flex items-center justify-center motion-safe:hover:scale-110 transition-transform duration-200"
                 aria-label="שלח הודעה ב-WhatsApp"
             >
                 <svg viewBox="0 0 24 24" width="18" height="18" className="sm:w-6 sm:h-6 fill-current stroke-none">
@@ -30,7 +30,7 @@ export default function SocialButtons() {
             {/* Facebook */}
             <a
                 href="#"
-                className="w-9 h-9 sm:w-12 sm:h-12 bg-[#1877F2] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                className="w-11 h-11 sm:w-12 sm:h-12 bg-[#1877F2] text-white rounded-full shadow-lg flex items-center justify-center motion-safe:hover:scale-110 transition-transform duration-200"
                 aria-label="עקוב בפייסבוק"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-6 sm:h-6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
@@ -39,7 +39,7 @@ export default function SocialButtons() {
             {/* Instagram */}
             <a
                 href="#"
-                className="w-9 h-9 sm:w-12 sm:h-12 text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                className="w-11 h-11 sm:w-12 sm:h-12 text-white rounded-full shadow-lg flex items-center justify-center motion-safe:hover:scale-110 transition-transform duration-200"
                 style={{ background: 'linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)' }}
                 aria-label="עקוב באינסטגרם"
             >

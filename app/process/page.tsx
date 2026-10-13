@@ -109,7 +109,7 @@ export default function ProcessPage() {
                             </div>
 
                             {/* Card */}
-                            <div className="w-[calc(100%-5rem)] md:w-[calc(50%-3rem)] bg-[var(--surface)] p-8 rounded-2xl border-2 border-[var(--foreground)]/5 hover:border-[var(--accent)] shadow-sm transition-all hover:-translate-y-1">
+                            <div className="w-[calc(100%-5rem)] md:w-[calc(50%-3rem)] bg-[var(--surface)] p-8 rounded-2xl border-2 border-[var(--foreground)]/5 hover:border-[var(--accent)] shadow-sm transition-all motion-safe:hover:-translate-y-1">
                                 <h3 className="font-black text-2xl text-[var(--foreground)] mb-3">{step.title}</h3>
                                 <p className="text-[var(--fg-80)] text-lg font-medium leading-relaxed">{step.desc}</p>
                             </div>

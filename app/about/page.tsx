@@ -67,7 +67,7 @@ export default function AboutPage() {
                                 src="/profile.jpeg"
                                 alt="תמונת פרופיל"
                                 fill
-                                className="object-cover object-top grayscale hover:grayscale-0 hover:scale-105 transition-all duration-500 ease-out"
+                                className="object-cover object-top grayscale hover:grayscale-0 motion-safe:hover:scale-105 transition-all duration-500 ease-out"
                                 sizes="(max-width: 768px) 256px, 288px"
                                 priority
                             />

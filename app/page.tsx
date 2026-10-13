@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">
-        <div className="max-w-full animate-fade-in-up space-y-8">
+        <div className="max-w-full space-y-8">
 
           <h1 className="text-[9vw] md:text-8xl lg:text-9xl font-black tracking-tight text-[var(--accent)] leading-snug drop-shadow-lg px-2 scale-y-[1.2] md:scale-y-100"
             style={{ textShadow: 'var(--hero-shadow)' }}>
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/process" className="px-10 py-5 bg-[var(--accent)] text-[var(--on-accent)] text-lg font-bold rounded-full hover:bg-[var(--foreground)] transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
+            <Link href="/process" className="px-10 py-5 bg-[var(--accent)] text-[var(--on-accent)] text-lg font-bold rounded-full hover:bg-[var(--foreground)] transition-all transform motion-safe:hover:scale-105 shadow-xl hover:shadow-2xl">
               איך זה עובד?
             </Link>
             <Link href="/contact" className="px-10 py-5 border-[2px] border-[var(--accent)] text-[var(--accent)] text-lg font-bold rounded-full hover:bg-[var(--accent)] hover:text-[var(--on-accent)] transition-all duration-300">
@@ -119,7 +119,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-black text-[var(--accent)]">נעים להכיר, אני אבי</h2>
           <p className="text-xl leading-relaxed font-medium text-[var(--text-lead)]">
-            "אחרי שנים רבות כבעלים של חברת הפקות ואירועים, וביצוע אין סוף אירועים, הגיע הזמן לעיסוק שמוסיף לנפש וליצירה."
+            &quot;אחרי שנים רבות כבעלים של חברת הפקות ואירועים, וביצוע אין סוף אירועים, הגיע הזמן לעיסוק שמוסיף לנפש וליצירה.&quot;
           </p>
           <p className="text-lg leading-relaxed text-[var(--text-lead)]">
             פניתי לתחום עיצוב הפנים כלימודי חוץ של הטכניון בעזריאלי, הקמתי סטודיו ויצאנו לדרך. הסטודיו מתמחה בעיצוב חללים מסחריים, מאפיות, חנויות נוחות ודירות מגורים.
